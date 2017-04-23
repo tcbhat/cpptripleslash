@@ -191,6 +191,9 @@
                                 case "<typeparam>":
                                     ts.CharLeft(false, 14);
                                     break;
+                                case "<typeparamref>":
+                                    ts.CharLeft(false, 3);
+                                    break;
                                 case "<value>":
                                     ts.CharLeft(false, 8);
                                         break;
@@ -236,7 +239,8 @@
                         {
                             if (this.TriggerCompletion())
                             {
-                                m_session.Filter();
+                                m_session.SelectedCompletionSet.SelectBestMatch();
+                                m_session.SelectedCompletionSet.Recalculate();
                                 return VSConstants.S_OK;
                             }
                         }
@@ -249,7 +253,8 @@
                 {
                     if (m_session != null && !m_session.IsDismissed) // the completion session is already active, so just filter
                     {
-                        m_session.Filter();
+                        m_session.SelectedCompletionSet.SelectBestMatch();
+                        m_session.SelectedCompletionSet.Recalculate();
                         return VSConstants.S_OK;
                     }
                 }

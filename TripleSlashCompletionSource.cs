@@ -40,13 +40,14 @@
             m_compList.Add(new Completion("<list>", "<list></list>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<para>", "<para></para>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<param>", "<param name=\"\"></param>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<paramref>", "<paramref name=\"\"></paramref>", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("<paramref>", "<paramref name=\"\"/>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<permission>", "<permission cref=\"\"></permission>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<remarks>", "<remarks></remarks>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<returns>", "<returns></returns>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<see>", "<see cref=\"\"/>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<seealso>", "<seealso cref=\"\"/>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<typeparam>", "<typeparam name=\"\"></typeparam>", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("<typeparamref>", "<typeparamref name=\"\"/>", string.Empty, image, string.Empty));
             m_compList.Add(new Completion("<value>", "<value></value>", string.Empty, image, string.Empty));
             
         }
@@ -105,9 +106,7 @@
             try
             {
                 SnapshotPoint currentPoint = session.TextView.Caret.Position.BufferPosition - 1;
-                ITextStructureNavigator navigator = m_sourceProvider.NavigatorService.GetTextStructureNavigator(m_textBuffer);
-                TextExtent extent = navigator.GetExtentOfWord(currentPoint);
-                return currentPoint.Snapshot.CreateTrackingSpan(extent.Span, SpanTrackingMode.EdgeInclusive);
+                return currentPoint.Snapshot.CreateTrackingSpan(currentPoint, 1, SpanTrackingMode.EdgeInclusive);
             }
             catch
             { 
