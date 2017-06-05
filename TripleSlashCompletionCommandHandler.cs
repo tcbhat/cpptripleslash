@@ -68,18 +68,18 @@
                 // check for the triple slash
                 if (typedChar == '/' && m_dte != null)
                 {
-                    string currentLine = m_textView.TextSnapshot.GetLineFromPosition(
-                        m_textView.Caret.Position.BufferPosition.Position).GetText();
+                    string currentLine = GetCurrentLine();
                     if ((currentLine + "/").Trim() == "///")
                     {
                         // Calculate how many spaces
-                        string spaces = currentLine.Replace(currentLine.TrimStart(), "");
+                        string prefix = currentLine.Replace(currentLine.TrimStart(), "") + "/// ";
                         TextSelection ts = m_dte.ActiveDocument.Selection as TextSelection;
                         int oldLine = ts.ActivePoint.Line;
                         int oldOffset = ts.ActivePoint.LineCharOffset;
                         ts.LineDown();
                         ts.EndOfLine();
 
+                        // Try to retrieve the CodeElement
                         CodeElement codeElement = null;
                         FileCodeModel fcm = m_dte.ActiveDocument.ProjectItem.FileCodeModel;
                         if (fcm != null)
@@ -87,40 +87,50 @@
                             codeElement = fcm.CodeElementFromPoint(ts.ActivePoint, vsCMElement.vsCMElementFunction);
                         }
 
-                        if (codeElement != null && codeElement is CodeFunction)
+                        // Process the function
+                        Function function = new Function();
+                        if (codeElement is CodeFunction codeFunction)
                         {
-                            CodeFunction function = codeElement as CodeFunction;
-                            StringBuilder sb = new StringBuilder("/ <summary>\r\n" + spaces + "/// \r\n" + spaces + "/// </summary>");
                             foreach (CodeElement child in codeElement.Children)
                             {
-                                CodeParameter parameter = child as CodeParameter;
-                                if (parameter != null)
+                                if (child is CodeParameter parameter)
                                 {
-                                    sb.AppendFormat("\r\n" + spaces + "/// <param name=\"{0}\"></param>", parameter.Name);
+                                    function.Arguments.Add(parameter.Name);
                                 }
                             }
-
-                            if (function.Type.AsString != "void")
-                            {
-                                sb.AppendFormat("\r\n" + spaces + "/// <returns></returns>");
-                            }
-
-                            ts.MoveToLineAndOffset(oldLine, oldOffset);
-                            ts.Insert(sb.ToString());
-                            ts.MoveToLineAndOffset(oldLine, oldOffset);
-                            ts.LineDown();
-                            ts.EndOfLine();
-                            return VSConstants.S_OK;
+                            function.ReturnType = codeFunction.Type.AsString;
                         }
                         else
                         {
-                            ts.MoveToLineAndOffset(oldLine, oldOffset);
-                            ts.Insert("/ <summary>\r\n" + spaces + "/// \r\n" + spaces + "/// </summary>");
-                            ts.MoveToLineAndOffset(oldLine, oldOffset);
-                            ts.LineDown();
-                            ts.EndOfLine();
-                            return VSConstants.S_OK;
+                            try
+                            {
+                                function.Parse(GetCurrentLine());
+                            }
+                            catch
+                            {
+                            }
                         }
+
+                        // Add the XML comments to the file
+                        StringBuilder sb = new StringBuilder($"/ <summary>\r\n{prefix}\r\n{prefix}</summary>");
+                        if(function.ReturnType.Length > 0)
+                        {
+                            foreach (string argument in function.Arguments)
+                            {
+                                sb.Append($"\r\n{prefix}<param name=\"{argument}\"></param>");
+                            }
+                            if (function.ReturnType != "void")
+                            {
+                                sb.AppendFormat($"\r\n{prefix}<returns></returns>");
+                            }
+                        }
+
+                        ts.MoveToLineAndOffset(oldLine, oldOffset);
+                        ts.Insert(sb.ToString());
+                        ts.MoveToLineAndOffset(oldLine, oldOffset);
+                        ts.LineDown();
+                        ts.EndOfLine();
+                        return VSConstants.S_OK;
                     }
                 }
 
@@ -215,8 +225,7 @@
                 {
                     if (pguidCmdGroup == VSConstants.VSStd2K && nCmdID == (uint)VSConstants.VSStd2KCmdID.RETURN)
                     {
-                        string currentLine = m_textView.TextSnapshot.GetLineFromPosition(
-                                m_textView.Caret.Position.BufferPosition.Position).GetText();
+                        string currentLine = GetCurrentLine();
                         if (currentLine.TrimStart().StartsWith("///"))
                         {
                             TextSelection ts = m_dte.ActiveDocument.Selection as TextSelection;
@@ -231,8 +240,7 @@
                 int retVal = m_nextCommandHandler.Exec(ref pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut);
                 if (typedChar == '<')
                 {
-                    string currentLine = m_textView.TextSnapshot.GetLineFromPosition(
-                                m_textView.Caret.Position.BufferPosition.Position).GetText();
+                    string currentLine = GetCurrentLine();
                     if (currentLine.TrimStart().StartsWith("///"))
                     {
                         if (m_session == null || m_session.IsDismissed) // If there is no active session, bring up completion
@@ -310,6 +318,12 @@
                 m_session.Dismissed -= this.OnSessionDismissed;
                 m_session = null;
             }
+        }
+
+        private string GetCurrentLine()
+        {
+            return m_textView.TextSnapshot.GetLineFromPosition(
+                        m_textView.Caret.Position.BufferPosition.Position).GetText();
         }
     }
 }
