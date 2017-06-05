@@ -6,6 +6,29 @@ using System.Text.RegularExpressions;
 
 namespace CppTripleSlash
 {
+    public static class StringExtensions
+    {
+        public static string SuperTrim(this string str)
+        {
+            var sb = new StringBuilder(str.Length);
+            var space = false;
+            for (var i = 0; i < str.Length; i++)
+            {
+                if (!space && str[i] == ' ')
+                {
+                    space = true;
+                    sb.Append(' ');
+                }
+                else
+                {
+                    space = false;
+                    sb.Append(str[i]);
+                }
+            }
+            return sb.ToString().Trim();
+        }
+    }
+
     class Function
     {
         class ParseException : Exception
@@ -37,12 +60,42 @@ namespace CppTripleSlash
                 return match.Groups[1].Value;
             }
             //normal argument
+            arg = arg
+                .Replace("const", "")
+                .Replace("volatile", "")
+                .Replace("&", "")
+                .Replace("*", "")
+                .SuperTrim()
+                //http://en.cppreference.com/w/cpp/language/types
+                .Replace("unsigned long long int", "int")
+                .Replace("signed long long int", "int")
+                .Replace("unsigned long long", "int")
+                .Replace("unsigned short int", "int")
+                .Replace("unsigned long int", "int")
+                .Replace("signed long long", "int")
+                .Replace("signed short int", "int")
+                .Replace("signed long int", "int")
+                .Replace("unsigned short", "int")
+                .Replace("unsigned long", "int")
+                .Replace("long long int", "int")
+                .Replace("unsigned int", "int")
+                .Replace("signed short", "int")
+                .Replace("signed long", "int")
+                .Replace("long double", "int")
+                .Replace("signed int", "int")
+                .Replace("short int", "int")
+                .Replace("long long", "int")
+                .Replace("long int", "int")
+                .Replace("unsigned", "int")
+                .Replace("signed", "int")
+                .Replace("short", "int")
+                .Replace("long", "int");
             int lastSpace = arg.LastIndexOf(' ');
             if (lastSpace == -1)
             {
-                throw new ParseException("NoSpaceInNormalArgument");
+                return "";
             }
-            return arg.Substring(lastSpace + 1).Trim();
+            return arg.Substring(lastSpace + 1).SuperTrim();
         }
 
         private static IEnumerable<string> SplitArgs(string args)
@@ -76,16 +129,18 @@ namespace CppTripleSlash
                 }
             }
             result.Add(sb.ToString());
-            return result.Where(s => !string.IsNullOrEmpty(s)).Select(s => s.Trim());
+            return result.Where(s => !string.IsNullOrEmpty(s)).Select(s => s.SuperTrim());
         }
 
         public void Parse(string decl)
         {
+            ReturnType = null;
+            Arguments.Clear();
             if (string.IsNullOrEmpty(decl))
             {
                 throw new ParseException("NullOrEmpty");
             }
-            decl = decl.Trim();
+            decl = decl.SuperTrim();
             if (!decl.EndsWith(";"))
             {
                 throw new ParseException("NotEndsWithSemicolon");
@@ -100,14 +155,26 @@ namespace CppTripleSlash
             {
                 throw new ParseException("NoLastParen");
             }
-            string nameReturnType = decl.Substring(0, firstParen).Trim();
+            string nameReturnType = decl.Substring(0, firstParen).SuperTrim();
             int lastSpace = nameReturnType.LastIndexOf(' ');
-            string args = decl.Substring(firstParen + 1, lastParen - firstParen - 1).Trim();
+            string args = decl.Substring(firstParen + 1, lastParen - firstParen - 1).SuperTrim();
             foreach (string arg in SplitArgs(args))
             {
-                Arguments.Add(GetArgumentName(arg).Trim('*'));
+                Arguments.Add(GetArgumentName(arg).SuperTrim());
             }
-            ReturnType = nameReturnType.Substring(0, lastSpace).Replace("static", "").Trim();
+            ReturnType = nameReturnType.Substring(0, lastSpace).Replace("static", "").SuperTrim();
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder(ReturnType + "(");
+            for (var i = 0; i < Arguments.Count; i++)
+            {
+                if (i > 0)
+                    sb.Append(',');
+                sb.Append($"\"{Arguments[i]}\"");
+            }
+            return sb.ToString() + ")";
         }
     }
 }
