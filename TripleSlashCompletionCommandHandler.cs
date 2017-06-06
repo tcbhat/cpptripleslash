@@ -113,7 +113,7 @@
 
                         // Add the XML comments to the file
                         StringBuilder sb = new StringBuilder($"/ <summary>\r\n{prefix}\r\n{prefix}</summary>");
-                        if(function.ReturnType.Length > 0)
+                        if(!string.IsNullOrEmpty(function.ReturnType))
                         {
                             foreach (string argument in function.Arguments)
                             {
