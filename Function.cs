@@ -27,6 +27,11 @@ namespace CppTripleSlash
             }
             return sb.ToString().Trim();
         }
+
+        public static string ReplaceWord(this string str, string pattern, string replacement)
+        {
+            return Regex.Replace(str, "\\b" + pattern + "\\b", replacement);
+        }
     }
 
     class Function
@@ -45,12 +50,12 @@ namespace CppTripleSlash
             {
                 return arg;
             }
-            if (arg.Contains("=")) //default value
+            if (arg.Contains("=")) //default value => "int n = 42"
             {
                 int eqIndex = arg.IndexOf('=');
-                return GetArgumentName(arg.Substring(0, eqIndex - 1));
+                return GetArgumentName(arg.Substring(0, eqIndex));
             }
-            if (arg.Contains("(")) //function parameter
+            if (arg.Contains("(")) //function parameter => "int (*name)(...)"
             {
                 Match match = Regex.Match(arg, "\\( *\\* *([a-zA-Z0-9_]+) *\\)");
                 if (!match.Success)
@@ -59,37 +64,41 @@ namespace CppTripleSlash
                 }
                 return match.Groups[1].Value;
             }
+            //char name[size]
+            var blockOpen = arg.IndexOf('[');
+            if (blockOpen != -1)
+                arg = arg.Substring(0, blockOpen);
             //normal argument
             arg = arg
-                .Replace("const", "")
-                .Replace("volatile", "")
                 .Replace("&", "")
                 .Replace("*", "")
+                .ReplaceWord("const", "")
+                .ReplaceWord("volatile", "")
                 .SuperTrim()
                 //http://en.cppreference.com/w/cpp/language/types
-                .Replace("unsigned long long int", "int")
-                .Replace("signed long long int", "int")
-                .Replace("unsigned long long", "int")
-                .Replace("unsigned short int", "int")
-                .Replace("unsigned long int", "int")
-                .Replace("signed long long", "int")
-                .Replace("signed short int", "int")
-                .Replace("signed long int", "int")
-                .Replace("unsigned short", "int")
-                .Replace("unsigned long", "int")
-                .Replace("long long int", "int")
-                .Replace("unsigned int", "int")
-                .Replace("signed short", "int")
-                .Replace("signed long", "int")
-                .Replace("long double", "int")
-                .Replace("signed int", "int")
-                .Replace("short int", "int")
-                .Replace("long long", "int")
-                .Replace("long int", "int")
-                .Replace("unsigned", "int")
-                .Replace("signed", "int")
-                .Replace("short", "int")
-                .Replace("long", "int");
+                .ReplaceWord("unsigned long long int", "int")
+                .ReplaceWord("signed long long int", "int")
+                .ReplaceWord("unsigned long long", "int")
+                .ReplaceWord("unsigned short int", "int")
+                .ReplaceWord("unsigned long int", "int")
+                .ReplaceWord("signed long long", "int")
+                .ReplaceWord("signed short int", "int")
+                .ReplaceWord("signed long int", "int")
+                .ReplaceWord("unsigned short", "int")
+                .ReplaceWord("unsigned long", "int")
+                .ReplaceWord("long long int", "int")
+                .ReplaceWord("unsigned int", "int")
+                .ReplaceWord("signed short", "int")
+                .ReplaceWord("signed long", "int")
+                .ReplaceWord("long double", "int")
+                .ReplaceWord("signed int", "int")
+                .ReplaceWord("short int", "int")
+                .ReplaceWord("long long", "int")
+                .ReplaceWord("long int", "int")
+                .ReplaceWord("unsigned", "int")
+                .ReplaceWord("signed", "int")
+                .ReplaceWord("short", "int")
+                .ReplaceWord("long", "int");
             int lastSpace = arg.LastIndexOf(' ');
             if (lastSpace == -1)
             {
