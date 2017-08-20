@@ -55,13 +55,9 @@ namespace CppTripleSlash
                 int eqIndex = arg.IndexOf('=');
                 return GetArgumentName(arg.Substring(0, eqIndex));
             }
-            if (arg.Contains("(")) //function parameter => "int (*name)(...)"
+            Match match = Regex.Match(arg, @"\( *\* *([a-zA-Z0-9_]+) *\)");
+            if (match.Success) //function parameter => "int (*name)(...)"
             {
-                Match match = Regex.Match(arg, "\\( *\\* *([a-zA-Z0-9_]+) *\\)");
-                if (!match.Success)
-                {
-                    throw new ParseException("FunctionParameterRegexFail");
-                }
                 return match.Groups[1].Value;
             }
             //char name[size]
@@ -70,8 +66,8 @@ namespace CppTripleSlash
                 arg = arg.Substring(0, blockOpen);
             //normal argument
             arg = arg
-                .Replace("&", "")
-                .Replace("*", "")
+                .Replace('&', ' ')
+                .Replace('*', ' ')
                 .ReplaceWord("const", "")
                 .ReplaceWord("volatile", "")
                 .SuperTrim()
@@ -110,27 +106,44 @@ namespace CppTripleSlash
         private static IEnumerable<string> SplitArgs(string args)
         {
             List<string> result = new List<string>();
-            int depth = 0;
+            int parenDepth = 0;
+            int templateDepth = 0;
             StringBuilder sb = new StringBuilder();
             foreach (char ch in args)
             {
                 switch (ch)
                 {
+                    case '<':
+                        templateDepth++;
+                        break;
+                    case '>':
+                        templateDepth--;
+                        if (templateDepth == 0)
+                        {
+                            sb.Append(' ');
+                        }
+                        break;
                     case '(':
-                        depth++;
-                        sb.Append(ch);
+                        parenDepth++;
+                        if (templateDepth == 0)
+                        {
+                            sb.Append(ch);
+                        }
                         break;
                     case ')':
-                        depth--;
-                        sb.Append(ch);
+                        parenDepth--;
+                        if (templateDepth == 0)
+                        {
+                            sb.Append(ch);
+                        }
                         break;
                     default:
-                        if (depth == 0 && ch == ',')
+                        if (parenDepth == 0 && templateDepth == 0 && ch == ',')
                         {
                             result.Add(sb.ToString());
                             sb.Clear();
                         }
-                        else
+                        else if (templateDepth == 0)
                         {
                             sb.Append(ch);
                         }
