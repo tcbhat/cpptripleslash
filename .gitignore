@@ -8,3 +8,5 @@ CppDoxyComplete/bin/Debug/extension.vsixmanifest
 CppDoxyComplete/bin/Release/CppDoxyComplete.dll.CodeAnalysisLog.xml
 CppDoxyComplete/CppDoxyComplete_IntegrationTests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *TemporaryGeneratedFile*
+CppDoxyComplete/.vs/CppDoxyComplete/v15/.suo
+CppDoxyComplete/UpgradeLog.htm
