@@ -1,0 +1,10 @@
+
+*.dll
+**/bin/*
+**/obj/*
+*.pdb
+*.pkgdef
+CppDoxyComplete/bin/Debug/extension.vsixmanifest
+CppDoxyComplete/bin/Release/CppDoxyComplete.dll.CodeAnalysisLog.xml
+CppDoxyComplete/CppDoxyComplete_IntegrationTests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*TemporaryGeneratedFile*

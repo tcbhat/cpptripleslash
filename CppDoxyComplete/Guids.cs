@@ -2,13 +2,13 @@
 // MUST match guids.h
 using System;
 
-namespace CppTripleSlash
+namespace PopDragos.CppDoxyComplete
 {
     static class GuidList
     {
-        public const string guidCppTripleSlashPkgString = "70dbb5d8-42d5-43f8-af7b-37668d5c9b46";
-        public const string guidCppTripleSlashCmdSetString = "7dda296b-3ba8-404a-a15b-bc88d13884b9";
+        public const string guidCppDoxyCompletePkgString = "66281e1a-6cb9-45db-95df-8bb60af6bef3";
+        public const string guidCppDoxyCompleteCmdSetString = "e6c43674-5eb9-4684-9f66-dcf1e93ab2e2";
 
-        public static readonly Guid guidCppTripleSlashCmdSet = new Guid(guidCppTripleSlashCmdSetString);
+        public static readonly Guid guidCppDoxyCompleteCmdSet = new Guid(guidCppDoxyCompleteCmdSetString);
     };
 }

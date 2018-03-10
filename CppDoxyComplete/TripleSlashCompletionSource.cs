@@ -30,26 +30,18 @@
             }
 
             
-            m_compList.Add(new Completion("<!-->", "<!---->", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<![CDATA[>", "<![CDATA[]]>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<c>", "<c></c>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<code>", "<code></code>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<example>", "<example></example>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<exception>", "<exception cref=\"\"></exception>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<include>", "<include file='' path='[@name=\"\"]'/>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<list>", "<list></list>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<para>", "<para></para>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<param>", "<param name=\"\"></param>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<paramref>", "<paramref name=\"\"/>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<permission>", "<permission cref=\"\"></permission>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<remarks>", "<remarks></remarks>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<returns>", "<returns></returns>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<see>", "<see cref=\"\"/>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<seealso>", "<seealso cref=\"\"/>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<typeparam>", "<typeparam name=\"\"></typeparam>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<typeparamref>", "<typeparamref name=\"\"/>", string.Empty, image, string.Empty));
-            m_compList.Add(new Completion("<value>", "<value></value>", string.Empty, image, string.Empty));
-            
+            m_compList.Add(new Completion("\\code", "\\code", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\sa", "\\sa", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\see", "\\see", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\include", "\\include", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\li", "\\li", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\param", "\\param", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\tparam", "\\tparam", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\brief", "\\brief", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\throw", "\\throw", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\return", "\\return", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\returns", "\\returns", string.Empty, image, string.Empty));
+            m_compList.Add(new Completion("\\relates", "\\relates", string.Empty, image, string.Empty));
         }
 
         void ICompletionSource.AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
@@ -73,7 +65,7 @@
                     return;
                 }
 
-                if (!text.TrimStart().StartsWith("///"))
+                if (!text.TrimStart().StartsWith(" * "))
                 {
                     return;
                 }
