@@ -1,0 +1,28 @@
+﻿<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="CppTripleSlash.tcbhat.70dbb5d8-42d5-43f8-af7b-37668d5c9b46" Version="1.0.6" Language="en-US" Publisher="tcbhat" />
+    <DisplayName>CppTripleSlash - xml doc comments for c++</DisplayName>
+    <Description xml:space="preserve">Generate xml documentaton comment stubs for c++ when three forward slashes are typed</Description>
+    <MoreInfo>https://github.com/tcbhat/cpptripleslash</MoreInfo>
+    <License>MS-PL.txt</License>
+    <GettingStartedGuide>https://marketplace.visualstudio.com/items?itemName=tcbhat.CppTripleSlash-xmldoccommentsforc</GettingStartedGuide>
+    <ReleaseNotes>Release.txt</ReleaseNotes>
+    <Icon>cppts.png</Icon>
+    <PreviewImage>cppts_preview.png</PreviewImage>
+    <Tags>C++, Comments, xml doc comments</Tags>
+  </Metadata>
+  <Installation InstalledByMsi="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0,16.0)" />
+    <InstallationTarget Version="[11.0,14.0)" Id="Microsoft.VisualStudio.Pro" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.0" d:InstallSource="Download" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[11.0,16.0)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+</PackageManifest>
