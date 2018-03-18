@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>VSLangProj110</name>
+  </assembly>
+  <members>
+    <member name="T:VSLangProj110.__PROJECTREFERENCETYPE2">
+      <summary>Specifies the reference type for a project.</summary>
+    </member>
+    <member name="F:VSLangProj110.__PROJECTREFERENCETYPE2.PROJREFTYPE_SDK">
+      <summary>Indicates that the project reference type is SDK. </summary>
+    </member>
+    <member name="T:VSLangProj110.CSharpProjectConfigurationProperties5">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.__id"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.AllowUnsafeBlocks"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.BaseAddress"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CheckForOverflowUnderflow"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisCulture"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisDictionaries"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisFailOnMissingRules">
+      <summary>Gets or sets a flag indicating whether the code analysis fails whenever any rule or rule set is missing.</summary>
+      <returns>Returns a flag indicating behavior of code analysis. Returns true if analysis fails whenever any rule or rule set is missing; otherwise, returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisIgnoreBuiltInRules">
+      <summary>Gets or sets a flag indicating whether to ignore the default code analysis rules.</summary>
+      <returns>Returns a flag indicating whether to ignore default analysis rules. Returns true indicating default analysis is ignored; otherwise returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisIgnoreBuiltInRuleSets">
+      <summary>Gets or sets a flag indicating whether to ignore the code analysis built-in rule sets.</summary>
+      <returns>Returns a flag indicating whether to ignore the code analysis built-in rule sets. Returns true indicating to ignore built-in rules; otherwise, returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisIgnoreGeneratedCode"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisInputAssembly"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisLogFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisModuleSuppressionsFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisOverrideRuleVisibilities"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisRuleAssemblies"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisRuleDirectories">
+      <summary>Gets or sets the directories in which to search for rules specified in rule set files.</summary>
+      <returns>Returns the directories in which to search for rules.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisRules"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisRuleSet">
+      <summary>Gets or sets the path to a file containing the list of rules to run.</summary>
+      <returns>Returns the path to the file containing the list of rules to run.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisRuleSetDirectories">
+      <summary>Gets or sets the directories in which to search for rule set files.</summary>
+      <returns>Returns the directories in which to search for rule set files.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisSpellCheckLanguages"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.CodeAnalysisUseTypeNameInSuppression"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.ConfigurationOverrideFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.DebugInfo"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.DebugSymbols"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.DefineConstants"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.DefineDebug"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.DefineTrace"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.DocumentationFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.EnableASPDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.EnableASPXDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.EnableSQLServerDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.EnableUnmanagedDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.ErrorReport"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.ExtenderNames"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.FileAlignment"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.GenerateSerializationAssemblies"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.IncrementalBuild"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.IntermediatePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.LanguageVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.NoStdLib"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.NoWarn"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.Optimize"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.OutputPath"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.PlatformTarget"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.RegisterForComInterop"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.RemoteDebugEnabled"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.RemoteDebugMachine"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.RemoveIntegerChecks"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.RunCodeAnalysis"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartAction"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartArguments"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartPage"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartProgram"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartURL"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartWithIE"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.StartWorkingDirectory"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.TreatSpecificWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.TreatWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.UseVSHostingProcess"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties5.WarningLevel"></member>
+    <member name="T:VSLangProj110.CSharpProjectConfigurationProperties6">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.__id"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.AllowUnsafeBlocks"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.BaseAddress"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CheckForOverflowUnderflow"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisCulture"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisDictionaries"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisFailOnMissingRules"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisIgnoreBuiltInRules"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisIgnoreBuiltInRuleSets"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisIgnoreGeneratedCode"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisInputAssembly"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisLogFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisModuleSuppressionsFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisOverrideRuleVisibilities"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisRuleAssemblies"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisRuleDirectories"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisRules"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisRuleSet"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisRuleSetDirectories"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisSpellCheckLanguages"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.CodeAnalysisUseTypeNameInSuppression"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.ConfigurationOverrideFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.DebugInfo"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.DebugSymbols"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.DefineConstants"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.DefineDebug"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.DefineTrace"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.DocumentationFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.EnableASPDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.EnableASPXDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.EnableSQLServerDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.EnableUnmanagedDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.ErrorReport"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.ExtenderNames"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.FileAlignment"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.GenerateSerializationAssemblies"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.IncrementalBuild"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.IntermediatePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.LanguageVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.NoStdLib"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.NoWarn"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.Optimize"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.OutputPath"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.PlatformTarget"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.Prefer32Bit">
+      <summary>Gets or sets a flag indicating whether 32-bit platform is preferred.</summary>
+      <returns>Returns the flag indicating 32-bit preference. Returns true if 32-bit is preferred; otherwise returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.RegisterForComInterop"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.RemoteDebugEnabled"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.RemoteDebugMachine"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.RemoveIntegerChecks"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.RunCodeAnalysis"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartAction"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartArguments"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartPage"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartProgram"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartURL"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartWithIE"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.StartWorkingDirectory"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.TreatSpecificWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.TreatWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.UseVSHostingProcess"></member>
+    <member name="P:VSLangProj110.CSharpProjectConfigurationProperties6.WarningLevel"></member>
+    <member name="T:VSLangProj110.CSharpProjectProperties6">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.__id"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.__project"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AbsoluteProjectDirectory"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ActiveConfigurationSettings"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ActiveFileSharePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ActiveWebAccessMethod"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ApplicationIcon"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ApplicationManifest"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AspnetVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyFileVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyGuid"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyKeyContainerName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyKeyProviderName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyOriginatorKeyFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyOriginatorKeyFileType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyOriginatorKeyMode"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.AssemblyVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Company"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ComVisible"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Copyright"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.DebugSecurityZoneURL"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.DefaultClientScript"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.DefaultHTMLPageLayout"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.DefaultNamespace"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.DefaultTargetSchema"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.DelaySign"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Description"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.EnableSecurityDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ExcludedPermissions"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ExtenderNames"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.FileName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.FileSharePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.FullPath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.GenerateManifests"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.LinkRepair"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.LocalPath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ManifestCertificateThumbprint"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ManifestKeyFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ManifestTimestampUrl"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.NeutralResourcesLanguage"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.OfflineURL"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.OptionCompare"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.OptionExplicit"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.OptionStrict"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.OutputFileName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.OutputType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.PostBuildEvent"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.PreBuildEvent"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Product"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ProjectType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Publish"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ReferencePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.RootNamespace"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.RunPostBuildEvent"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.ServerExtensionsVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.SignAssembly"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.SignManifests"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.StartupObject"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.TargetFramework"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.TargetFrameworkMoniker">
+      <summary>Gets or sets the target framework moniker.</summary>
+      <returns>Returns the target framework moniker.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.TargetZone"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Title"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Trademark"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.TypeComplianceDiagnostics"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.URL"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.WebAccessMethod"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.WebServer"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.WebServerVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties6.Win32ResourceFile"></member>
+    <member name="T:VSLangProj110.CSharpProjectProperties7">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.__id"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.__project"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AbsoluteProjectDirectory"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ActiveConfigurationSettings"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ActiveFileSharePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ActiveWebAccessMethod"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ApplicationIcon"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ApplicationManifest"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AspnetVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyFileVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyGuid"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyKeyContainerName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyKeyProviderName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyOriginatorKeyFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyOriginatorKeyFileType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyOriginatorKeyMode"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.AssemblyVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Company"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ComVisible"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Copyright"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.DebugSecurityZoneURL"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.DefaultClientScript"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.DefaultHTMLPageLayout"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.DefaultNamespace"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.DefaultTargetSchema"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.DelaySign"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Description"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.EnableSecurityDebugging"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ExcludedPermissions"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ExtenderNames"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.FileName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.FileSharePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.FullPath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.GenerateManifests"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.LinkRepair"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.LocalPath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ManifestCertificateThumbprint"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ManifestKeyFile"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ManifestTimestampUrl"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.NeutralResourcesLanguage"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OfflineURL"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OptionCompare"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OptionExplicit"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OptionStrict"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OutputFileName"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OutputType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.OutputTypeEx">
+      <summary>Gets or sets an enumerated value indicating the output type of the project.</summary>
+      <returns>Returns the value indicating the output type.</returns>
+    </member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.PostBuildEvent"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.PreBuildEvent"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Product"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ProjectType"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Publish"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ReferencePath"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.RootNamespace"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.RunPostBuildEvent"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.ServerExtensionsVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.SignAssembly"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.SignManifests"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.StartupObject"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.TargetFramework"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.TargetFrameworkMoniker"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.TargetZone"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Title"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Trademark"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.TypeComplianceDiagnostics"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.URL"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.WebAccessMethod"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.WebServer"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.WebServerVersion"></member>
+    <member name="P:VSLangProj110.CSharpProjectProperties7.Win32ResourceFile"></member>
+    <member name="T:VSLangProj110.prjOutputTypeEx">
+      <summary>Enumerates project output types, must match equivalent values from the old project output type enumeration.</summary>
+    </member>
+    <member name="F:VSLangProj110.prjOutputTypeEx.prjOutputTypeEx_WinExe">
+      <summary>Project output type is WinExe.</summary>
+    </member>
+    <member name="F:VSLangProj110.prjOutputTypeEx.prjOutputTypeEx_Exe">
+      <summary>Project output type is executable.</summary>
+    </member>
+    <member name="F:VSLangProj110.prjOutputTypeEx.prjOutputTypeEx_Library">
+      <summary>Project output type is library.</summary>
+    </member>
+    <member name="F:VSLangProj110.prjOutputTypeEx.prjOutputTypeEx_WinMDObj">
+      <summary>Project output type is WinMDObj.</summary>
+    </member>
+    <member name="F:VSLangProj110.prjOutputTypeEx.prjOutputTypeEx_AppContainerExe">
+      <summary>Project output type is AppContainerExe</summary>
+    </member>
+    <member name="T:VSLangProj110.Reference4">
+      <summary>Extends the <see cref="T:VSLangProj80.Reference3" /> interface of the <see cref="N:VSLangProj80" /> namespace.</summary>
+    </member>
+    <member name="P:VSLangProj110.Reference4.Aliases"></member>
+    <member name="P:VSLangProj110.Reference4.AutoReferenced"></member>
+    <member name="P:VSLangProj110.Reference4.BuildNumber"></member>
+    <member name="P:VSLangProj110.Reference4.Collection"></member>
+    <member name="P:VSLangProj110.Reference4.ContainingProject"></member>
+    <member name="P:VSLangProj110.Reference4.CopyLocal"></member>
+    <member name="P:VSLangProj110.Reference4.Culture"></member>
+    <member name="P:VSLangProj110.Reference4.Description"></member>
+    <member name="P:VSLangProj110.Reference4.DTE"></member>
+    <member name="P:VSLangProj110.Reference4.EmbedInteropTypes">
+      <summary>Gets or sets a flag indicating whether to embed interop types from the reference into the target assembly.</summary>
+      <returns>Returns a flag indicating whether interop types are embedded in the target assembly.</returns>
+    </member>
+    <member name="P:VSLangProj110.Reference4.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.Reference4.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.Reference4.ExtenderNames"></member>
+    <member name="P:VSLangProj110.Reference4.Identity"></member>
+    <member name="P:VSLangProj110.Reference4.Isolated"></member>
+    <member name="P:VSLangProj110.Reference4.MajorVersion"></member>
+    <member name="P:VSLangProj110.Reference4.MinorVersion"></member>
+    <member name="P:VSLangProj110.Reference4.Name"></member>
+    <member name="P:VSLangProj110.Reference4.Path"></member>
+    <member name="P:VSLangProj110.Reference4.PublicKeyToken"></member>
+    <member name="P:VSLangProj110.Reference4.RefType"></member>
+    <member name="M:VSLangProj110.Reference4.Remove"></member>
+    <member name="P:VSLangProj110.Reference4.Resolved"></member>
+    <member name="P:VSLangProj110.Reference4.RevisionNumber"></member>
+    <member name="P:VSLangProj110.Reference4.RuntimeVersion"></member>
+    <member name="P:VSLangProj110.Reference4.SourceProject"></member>
+    <member name="P:VSLangProj110.Reference4.SpecificVersion"></member>
+    <member name="P:VSLangProj110.Reference4.StrongName"></member>
+    <member name="P:VSLangProj110.Reference4.SubType"></member>
+    <member name="P:VSLangProj110.Reference4.Type"></member>
+    <member name="P:VSLangProj110.Reference4.Version"></member>
+    <member name="T:VSLangProj110.Reference5">
+      <summary>Extends the <see cref="T:VSLangProj110.Reference4" /> interface of the <see cref="N:VsLangProj80" /> namespace.</summary>
+    </member>
+    <member name="P:VSLangProj110.Reference5.Aliases"></member>
+    <member name="P:VSLangProj110.Reference5.AutoReferenced"></member>
+    <member name="P:VSLangProj110.Reference5.BuildNumber"></member>
+    <member name="P:VSLangProj110.Reference5.Collection"></member>
+    <member name="P:VSLangProj110.Reference5.ContainingProject"></member>
+    <member name="P:VSLangProj110.Reference5.CopyLocal"></member>
+    <member name="P:VSLangProj110.Reference5.Culture"></member>
+    <member name="P:VSLangProj110.Reference5.Description"></member>
+    <member name="P:VSLangProj110.Reference5.DTE"></member>
+    <member name="P:VSLangProj110.Reference5.EmbedInteropTypes"></member>
+    <member name="P:VSLangProj110.Reference5.ExpandedSdkReferences">
+      <summary>Gets the list of references associated with an SDK.</summary>
+      <returns>Returns a list of references.</returns>
+    </member>
+    <member name="P:VSLangProj110.Reference5.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.Reference5.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.Reference5.ExtenderNames"></member>
+    <member name="P:VSLangProj110.Reference5.Group">
+      <summary>Gets the associated group object.</summary>
+      <returns>Returns the associated group object.</returns>
+    </member>
+    <member name="P:VSLangProj110.Reference5.Identity"></member>
+    <member name="P:VSLangProj110.Reference5.Isolated"></member>
+    <member name="P:VSLangProj110.Reference5.MajorVersion"></member>
+    <member name="P:VSLangProj110.Reference5.MinorVersion"></member>
+    <member name="P:VSLangProj110.Reference5.Name"></member>
+    <member name="P:VSLangProj110.Reference5.Path"></member>
+    <member name="P:VSLangProj110.Reference5.PublicKeyToken"></member>
+    <member name="P:VSLangProj110.Reference5.RefType"></member>
+    <member name="M:VSLangProj110.Reference5.Remove"></member>
+    <member name="P:VSLangProj110.Reference5.Resolved"></member>
+    <member name="P:VSLangProj110.Reference5.RevisionNumber"></member>
+    <member name="P:VSLangProj110.Reference5.RuntimeVersion"></member>
+    <member name="P:VSLangProj110.Reference5.SourceProject"></member>
+    <member name="P:VSLangProj110.Reference5.SpecificVersion"></member>
+    <member name="P:VSLangProj110.Reference5.StrongName"></member>
+    <member name="P:VSLangProj110.Reference5.SubType"></member>
+    <member name="P:VSLangProj110.Reference5.Type"></member>
+    <member name="P:VSLangProj110.Reference5.Version"></member>
+    <member name="T:VSLangProj110.References2">
+      <summary>Extends the References interface of the <see cref="N:VSLangProj" /> namespace.</summary>
+    </member>
+    <member name="M:VSLangProj110.References2.Add(System.String)"></member>
+    <member name="M:VSLangProj110.References2.AddActiveX(System.String,System.Int32,System.Int32,System.Int32,System.String)"></member>
+    <member name="M:VSLangProj110.References2.AddProject(EnvDTE.Project)"></member>
+    <member name="M:VSLangProj110.References2.AddSDK(System.String,System.String)">
+      <summary>Adds a reference to the specified SDK to the project.</summary>
+      <returns>Returns a <see cref="T:VSLangProj.Reference" /> for the specified SDK.</returns>
+      <param name="wszSDKDisplayName">Optional display name for the SDK. If null or empty, the name extracted from wszSDKidentifier is used as the display name.</param>
+      <param name="wszSDKidentifier">Required. Identifier of the SDK to be referenced by the project.</param>
+    </member>
+    <member name="P:VSLangProj110.References2.ContainingProject"></member>
+    <member name="P:VSLangProj110.References2.Count"></member>
+    <member name="P:VSLangProj110.References2.DTE"></member>
+    <member name="M:VSLangProj110.References2.Find(System.String)"></member>
+    <member name="M:VSLangProj110.References2.GetEnumerator"></member>
+    <member name="M:VSLangProj110.References2.Item(System.Object)"></member>
+    <member name="P:VSLangProj110.References2.Parent"></member>
+    <member name="T:VSLangProj110.VBProjectConfigurationProperties5">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.__id"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.AllowUnsafeBlocks"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.BaseAddress"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CheckForOverflowUnderflow"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisCulture"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisDictionaries"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisFailOnMissingRules">
+      <summary>Gets or sets a flag indicating whether the code analysis fails whenever any rule or rule set is missing.</summary>
+      <returns>Returns a flag indicating behavior of code analysis. Returns true if analysis fails whenever any rule or rule set is missing; otherwise, returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisIgnoreBuiltInRules">
+      <summary>Gets or sets a flag indicating whether to ignore the default code analysis rules.</summary>
+      <returns>Returns a flag indicating whether to ignore default analysis rules. Returns true indicating default analysis is ignored; otherwise returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisIgnoreBuiltInRuleSets">
+      <summary>Gets or sets a flag indicating whether to ignore the code analysis built-in rule sets.</summary>
+      <returns>Returns a flag indicating whether to ignore the code analysis built-in rule sets. Returns true indicating to ignore built-in rules; otherwise, returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisIgnoreGeneratedCode"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisInputAssembly"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisLogFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisModuleSuppressionsFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisOverrideRuleVisibilities"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisRuleAssemblies"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisRuleDirectories">
+      <summary>Gets or sets the directories in which to search for rules specified in rule set files.</summary>
+      <returns>Returns the directories in which to search for rules.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisRules"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisRuleSet">
+      <summary>Gets or sets the path to a file containing the list of rules to run.</summary>
+      <returns>Returns the path to the file containing the list of rules to run.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisRuleSetDirectories">
+      <summary>Gets or sets the directories in which to search for rule set files.</summary>
+      <returns>Returns the directories in which to search for rule set files.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisSpellCheckLanguages"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.CodeAnalysisUseTypeNameInSuppression"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.ConfigurationOverrideFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.DebugInfo"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.DebugSymbols"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.DefineConstants"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.DefineDebug"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.DefineTrace"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.DocumentationFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.EnableASPDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.EnableASPXDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.EnableSQLServerDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.EnableUnmanagedDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.ExtenderNames"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.FileAlignment"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.GenerateSerializationAssemblies"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.IncrementalBuild"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.IntermediatePath"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.NoStdLib"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.NoWarn"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.Optimize"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.OutputPath"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.PlatformTarget"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.RegisterForComInterop"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.RemoteDebugEnabled"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.RemoteDebugMachine"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.RemoveIntegerChecks"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.RunCodeAnalysis"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartAction"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartArguments"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartPage"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartProgram"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartURL"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartWithIE"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.StartWorkingDirectory"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.TreatSpecificWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.TreatWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.UseVSHostingProcess"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties5.WarningLevel"></member>
+    <member name="T:VSLangProj110.VBProjectConfigurationProperties6">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.__id"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.AllowUnsafeBlocks"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.BaseAddress"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CheckForOverflowUnderflow"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisCulture"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisDictionaries"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisFailOnMissingRules"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisIgnoreBuiltInRules"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisIgnoreBuiltInRuleSets"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisIgnoreGeneratedCode"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisInputAssembly"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisLogFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisModuleSuppressionsFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisOverrideRuleVisibilities"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisRuleAssemblies"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisRuleDirectories"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisRules"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisRuleSet"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisRuleSetDirectories"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisSpellCheckLanguages"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.CodeAnalysisUseTypeNameInSuppression"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.ConfigurationOverrideFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.DebugInfo"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.DebugSymbols"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.DefineConstants"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.DefineDebug"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.DefineTrace"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.DocumentationFile"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.EnableASPDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.EnableASPXDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.EnableSQLServerDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.EnableUnmanagedDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.ExtenderNames"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.FileAlignment"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.GenerateSerializationAssemblies"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.IncrementalBuild"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.IntermediatePath"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.NoStdLib"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.NoWarn"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.Optimize"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.OutputPath"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.PlatformTarget"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.Prefer32Bit">
+      <summary>Gets or sets a flag indicating whether 32-bit platform is preferred.</summary>
+      <returns>Returns the flag indicating 32-bit preference. Returns true if 32-bit is preferred; otherwise returns false.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.RegisterForComInterop"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.RemoteDebugEnabled"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.RemoteDebugMachine"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.RemoveIntegerChecks"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.RunCodeAnalysis"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartAction"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartArguments"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartPage"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartProgram"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartURL"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartWithIE"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.StartWorkingDirectory"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.TreatSpecificWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.TreatWarningsAsErrors"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.UseVSHostingProcess"></member>
+    <member name="P:VSLangProj110.VBProjectConfigurationProperties6.WarningLevel"></member>
+    <member name="T:VSLangProj110.VBProjectProperties6">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.VBProjectProperties6.__id"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.__project"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AbsoluteProjectDirectory"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ActiveConfigurationSettings"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ActiveFileSharePath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ActiveWebAccessMethod"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ApplicationIcon"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ApplicationManifest"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AspnetVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyFileVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyGuid"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyKeyContainerName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyKeyProviderName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyOriginatorKeyFile"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyOriginatorKeyFileType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyOriginatorKeyMode"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.AssemblyVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Company"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ComVisible"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Copyright"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.DebugSecurityZoneURL"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.DefaultClientScript"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.DefaultHTMLPageLayout"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.DefaultNamespace"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.DefaultTargetSchema"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.DelaySign"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Description"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.EnableSecurityDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ExcludedPermissions"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ExtenderNames"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.FileName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.FileSharePath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.FullPath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.GenerateManifests"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.LanguageVersion">
+      <summary>Gets or sets the language version.</summary>
+      <returns>Returns the language version.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectProperties6.LinkRepair"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.LocalPath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ManifestCertificateThumbprint"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ManifestKeyFile"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ManifestTimestampUrl"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.MyApplication"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.MyType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.NeutralResourcesLanguage"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OfflineURL"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OptionCompare"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OptionExplicit"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OptionInfer"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OptionStrict"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OutputFileName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.OutputType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.PostBuildEvent"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.PreBuildEvent"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Product"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ProjectType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Publish"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ReferencePath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.RootNamespace"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.RunPostBuildEvent"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.ServerExtensionsVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.SignAssembly"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.SignManifests"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.StartupObject"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.TargetFramework"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.TargetFrameworkMoniker">
+      <summary>Gets or sets the target framework moniker.</summary>
+      <returns>Returns the target framework moniker.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectProperties6.TargetZone"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Title"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Trademark"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.TypeComplianceDiagnostics"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.URL"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.WebAccessMethod"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.WebServer"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.WebServerVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties6.Win32ResourceFile"></member>
+    <member name="T:VSLangProj110.VBProjectProperties7">
+      <summary>This interface provides internal-only access to project configuration properties. For more information, see Accessing Project Type Specific Project, Project Item, and Configuration Properties.</summary>
+    </member>
+    <member name="P:VSLangProj110.VBProjectProperties7.__id"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.__project"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AbsoluteProjectDirectory"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ActiveConfigurationSettings"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ActiveFileSharePath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ActiveWebAccessMethod"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ApplicationIcon"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ApplicationManifest"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AspnetVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyFileVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyGuid"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyKeyContainerName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyKeyProviderName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyOriginatorKeyFile"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyOriginatorKeyFileType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyOriginatorKeyMode"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.AssemblyVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Company"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ComVisible"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Copyright"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.DebugSecurityZoneURL"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.DefaultClientScript"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.DefaultHTMLPageLayout"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.DefaultNamespace"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.DefaultTargetSchema"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.DelaySign"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Description"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.EnableSecurityDebugging"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ExcludedPermissions"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Extender(System.String)"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ExtenderCATID"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ExtenderNames"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.FileName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.FileSharePath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.FullPath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.GenerateManifests"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.LanguageVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.LinkRepair"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.LocalPath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ManifestCertificateThumbprint"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ManifestKeyFile"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ManifestTimestampUrl"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.MyApplication"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.MyType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.NeutralResourcesLanguage"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OfflineURL"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OptionCompare"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OptionExplicit"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OptionInfer"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OptionStrict"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OutputFileName"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OutputType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.OutputTypeEx">
+      <summary>Gets or sets an enumerated value indicating the output type of the project.</summary>
+      <returns>Returns the value indicating the output type.</returns>
+    </member>
+    <member name="P:VSLangProj110.VBProjectProperties7.PostBuildEvent"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.PreBuildEvent"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Product"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ProjectType"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Publish"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ReferencePath"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.RootNamespace"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.RunPostBuildEvent"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.ServerExtensionsVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.SignAssembly"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.SignManifests"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.StartupObject"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.TargetFramework"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.TargetFrameworkMoniker"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.TargetZone"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Title"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Trademark"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.TypeComplianceDiagnostics"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.URL"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.WebAccessMethod"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.WebServer"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.WebServerVersion"></member>
+    <member name="P:VSLangProj110.VBProjectProperties7.Win32ResourceFile"></member>
+    <member name="T:VSLangProj110.VBProjPropId100">
+      <summary>Enumerates properties specific to Visual Basic.</summary>
+    </member>
+    <member name="F:VSLangProj110.VBProjPropId100.VBPROJPROPID_LanguageVersion">
+      <summary>Indicates the language version.</summary>
+    </member>
+    <member name="T:VSLangProj110.VsProjPropId100">
+      <summary>Represents project properties for all Visual Studio projects.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_TargetFrameworkMoniker">
+      <summary>The target framework moniker used by the project.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_CodeAnalysisRuleSet">
+      <summary>The path to the file containing the rule set used by the project.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_CodeAnalysisRuleSetDirectories">
+      <summary>List of directories to search for rule sets used by the project.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_CodeAnalysisIgnoreBuiltInRuleSets">
+      <summary>Flag indicating whether to ignore built-in rule sets.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_CodeAnalysisRuleDirectories">
+      <summary>List of directories to search for rules specified in the rule set file.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_CodeAnalysisIgnoreBuiltInRules">
+      <summary>Flag indicating whether to ignore built-in rules.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId100.VBPROJPROPID_CodeAnalysisFailOnMissingRules">
+      <summary>Flag indicating whether code analysis will fail if any rules are missing.</summary>
+    </member>
+    <member name="T:VSLangProj110.VsProjPropId110">
+      <summary>Represents project properties for all Visual Studio projects.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId110.VBPROJPROPID_OutputTypeEx">
+      <summary>Indicates the output type of the project.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjPropId110.VBPROJPROPID_Prefer32Bit">
+      <summary>Indicates whether the project prefers a 32-bit platform.</summary>
+    </member>
+    <member name="T:VSLangProj110.VsProjReferencePropId100">
+      <summary>Enumerates the reference properties of a project.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjReferencePropId100.DISPID_Reference_EmbedInteropTypes">
+      <summary>Indicates whether interop types are embedded in the target assembly.</summary>
+    </member>
+    <member name="T:VSLangProj110.VsProjReferencePropId110">
+      <summary>Enumerates the reference properties of a project.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjReferencePropId110.DISPID_Reference_ExpandedSdkReferences">
+      <summary>Indicates a list of references associated with an SDK.</summary>
+    </member>
+    <member name="F:VSLangProj110.VsProjReferencePropId110.DISPID_Reference_Group">
+      <summary>Indicates the group associated with the project.</summary>
+    </member>
+  </members>
+</doc>

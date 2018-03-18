@@ -13,7 +13,7 @@
     using System.Text;
     using Microsoft.VisualStudio.VCCodeModel;
 
-    public class TripleSlashCompletionCommandHandler : IOleCommandTarget
+	public class TripleSlashCompletionCommandHandler : IOleCommandTarget
     {
         public const string CppTypeName = "C/C++";
         private IOleCommandTarget m_nextCommandHandler;
@@ -28,7 +28,9 @@
             TripleSlashCompletionHandlerProvider provider,
             DTE dte)
         {
-            this.m_textView = textView;
+			//AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
+
+			this.m_textView = textView;
             this.m_provider = provider;
             this.m_dte = dte;
 
@@ -42,7 +44,7 @@
             }
         }
 
-        public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
+		public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
         {
             return m_nextCommandHandler.QueryStatus(ref pguidCmdGroup, cCmds, prgCmds, pCmdText);
         }
@@ -103,7 +105,13 @@
                             }
                         }
 
-                        if (codeElement != null && codeElement is VCCodeFunction)
+						var cls = codeElement as VCCodeClass;
+						var cls2 = codeElement as CodeClass;
+						var fnc = codeElement as VCCodeFunction;
+
+						var kind = codeElement.Kind;
+
+                        if (codeElement != null && codeElement is CodeFunction)
                         {
                             VCCodeFunction function = codeElement as VCCodeFunction;
                             StringBuilder sb = new StringBuilder("!\r\n" + spaces + " * \r\n" + spaces + " * ");

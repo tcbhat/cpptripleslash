@@ -4,8 +4,10 @@
 **/obj/*
 *.pdb
 *.pkgdef
-CppDoxyComplete/bin/Debug/extension.vsixmanifest
-CppDoxyComplete/bin/Release/CppDoxyComplete.dll.CodeAnalysisLog.xml
+CppDoxyComplete/bin/Debug/*
+CppDoxyComplete/bin/Release/*
+CppDoxyComplete/backup/*
+**/.vs/**/v15/**
 CppDoxyComplete/CppDoxyComplete_IntegrationTests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 *TemporaryGeneratedFile*
 CppDoxyComplete/.vs/CppDoxyComplete/v15/.suo

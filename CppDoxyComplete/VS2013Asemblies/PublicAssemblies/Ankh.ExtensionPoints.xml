@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ankh.ExtensionPoints</name>
+    </assembly>
+    <members>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.CommitArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.CommitArgs.#ctor(System.Collections.Generic.ICollection{System.Uri},System.Int64,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ankh.ExtensionPoints.IssueTracker.CommitArgs"/> class.
+            </summary>
+            <param name="paths">The paths.</param>
+            <param name="revision">The revision.</param>
+            <param name="commitMessage">The commit message.</param>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.CommitArgs.Paths">
+            <summary>
+            Gets the paths.
+            </summary>
+            <value>The paths.</value>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.CommitArgs.Revision">
+            <summary>
+            Gets the revision.
+            </summary>
+            <value>The revision.</value>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.CommitArgs.InternalCommitMessage">
+            <summary>
+            Gets or sets the internal commit message.
+            </summary>
+            <value>The internal commit message.</value>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.#ctor(System.Collections.Generic.ICollection{System.Uri},System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs"/> class.
+            </summary>
+            <param name="paths">The paths.</param>
+            <param name="revision">The revision.</param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.#ctor(System.Collections.Generic.ICollection{System.Uri},System.Int64,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs"/> class.
+            </summary>
+            <param name="paths">The paths.</param>
+            <param name="revision">The revision.</param>
+            <param name="commitMessage">The commit message.</param>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs"/> is cancel.
+            </summary>
+            <value><c>true</c> if cancel; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.CommitMessage">
+            <summary>
+            Gets or sets the commit message.
+            </summary>
+            <value>The commit message.</value>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.IssueText">
+            <summary>
+            Gets or sets the issuetext (as set in the issue box)
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.SkipIssueVerify">
+            <summary>
+            Gets or sets a boolean that indicates whether the commit message and
+            issuetext should be verified (or not)
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.PreCommitArgs.CustomProperties">
+            <summary>
+            Gets a dictionary of custom revision properties to set while committing
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.PostCommitArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.PostCommitArgs.#ctor(System.Collections.Generic.ICollection{System.Uri},System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ankh.ExtensionPoints.IssueTracker.PostCommitArgs"/> class.
+            </summary>
+            <param name="paths">The paths.</param>
+            <param name="revision">The revision.</param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.PostCommitArgs.#ctor(System.Collections.Generic.ICollection{System.Uri},System.Int64,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ankh.ExtensionPoints.IssueTracker.PostCommitArgs"/> class.
+            </summary>
+            <param name="paths">The paths.</param>
+            <param name="revision">The revision.</param>
+            <param name="commitMessage">The commit message.</param>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.PostCommitArgs.CommitMessage">
+            <summary>
+            Gets the commit message.
+            </summary>
+            <value>The commit message.</value>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.IssueRepository">
+            <summary>
+            Base class for IssueRepository implementation
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings">
+            <summary>
+            Base class for Issue Repository Settings
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="connectorName">Unique connector name(as registered with the registry)</param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type. 
+            </summary>
+            <returns>
+            A hash code for the current <see cref="T:System.Object"/>.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            true if the specified <see cref="T:System.Object"/> is equal to the current <see cref="T:System.Object"/>; otherwise, false.
+            </returns>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with the current <see cref="T:System.Object"/>. 
+                            </param><exception cref="T:System.NullReferenceException">The <paramref name="obj"/> parameter is null.
+                            </exception><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.Equals(Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+            </returns>
+            <param name="other">An object to compare with this object.
+                            </param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.ValueEquals(Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings)">
+            <summary>
+            Determines wether the <paramref name="other"/> is equal to this settings
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.ConnectorName">
+            <summary>
+            Gets the issue repository connector's registered name
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.RepositoryUri">
+            <summary>
+            Gets Issue Repository URI
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.RepositoryId">
+            <summary>
+            Gets the unique id of the repository.
+            </summary>
+            <remarks>This value can be used to identify a specific (sub) issue repository on RepositoryUri</remarks>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings.CustomProperties">
+            <summary>
+            Custom properties specific to the connector.
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepository.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="connectorName">Unique connector name(as registered with the registry)</param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepository.NavigateTo(System.String)">
+            <summary>
+            Handles the request to open the issue.
+            </summary>
+            <param name="issueId">Issue identifier</param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepository.NavigateToRevision(System.Int64)">
+            <summary>
+            Called when a user uses 'Open Revision' on a log message that refers to
+            some revision when <see cref="P:Ankh.ExtensionPoints.IssueTracker.IssueRepository.CanNavigateToRevision"/> is true.
+            </summary>
+            <param name="revision"></param>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepository.PreCommit(Ankh.ExtensionPoints.IssueTracker.PreCommitArgs)">
+            <summary>
+            Called just before the changes are committed.
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepository.PostCommit(Ankh.ExtensionPoints.IssueTracker.PostCommitArgs)">
+            <summary>
+            Called just after the changes are committed.
+            </summary>
+            <remarks>Provider is responsible for any post-commit issue related operations</remarks>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepository.Label">
+            <summary>
+            Label for the issue repository.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepository.CanNavigateToRevision">
+            <summary>
+            Gets a boolean indicating whether the issue repository implements
+            <see cref="M:Ankh.ExtensionPoints.IssueTracker.IssueRepository.NavigateToRevision(System.Int64)"/>
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepository.IssueIdPattern">
+            <summary>
+            Obsolete: Gets the RegEx pattern to recognize issues in a text.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepository.IssueIdRegex">
+            <summary>
+            Gets the pre-compiled issue id regex or NULL if there is no issue regex
+            </summary>
+            <remarks>The default implementation caches a regex built from IssueIdPattern</remarks>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepository.Window">
+            <summary>
+            Gets the IWin32Window instance for issue presentation
+            </summary>
+            <remarks>Default implementation returns this as IWin32Window.</remarks>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConfigurationPage">
+            <summary>
+            Base class for Issue Repository configuration page
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.IIssueRepositoryConfigurationPageEvents">
+            <summary>
+            This interface exposes the config page events raised by connector configuration logic.
+            </summary>
+        </member>
+        <member name="E:Ankh.ExtensionPoints.IssueTracker.IIssueRepositoryConfigurationPageEvents.OnPageEvent">
+            <summary>
+            Raised on a config page event
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConfigurationPage.ConfigurationPageChanged(Ankh.ExtensionPoints.IssueTracker.ConfigPageEventArgs)">
+            <summary>
+            Notifies ragistered OnPageEvent handlers.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConfigurationPage.Settings">
+            <summary>
+            Gets or sets the current repository settings.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConfigurationPage.Window">
+            <summary>
+            Gets the IWin32Window instance for issue repository configuration UI.
+            </summary>
+            <remarks>Default implementation returns this as IWin32Window.</remarks>
+        </member>
+        <member name="E:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConfigurationPage.OnPageEvent">
+            <summary>
+            Raised on a configuration page event 
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.ConfigPageEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.ConfigPageEventArgs.IsComplete">
+            <summary>
+            Gets or sets a value indicating whether this instance is complete.
+            </summary>
+            <value>
+                <c>true</c> if this instance is complete; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.ConfigPageEventArgs.Exception">
+            <summary>
+            Gets or sets the exception.
+            </summary>
+            <value>The exception.</value>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConnector">
+            <summary>
+            Base class for Issue Repository Connector service
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConnector.Create(Ankh.ExtensionPoints.IssueTracker.IssueRepositorySettings)">
+            <summary>
+            Creates an Issue Repository based on the settings.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConnector.Name">
+            <summary>
+            Gets the registered connector's unique name 
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.IssueTracker.IssueRepositoryConnector.ConfigurationPage">
+            <summary>
+            Gets the repository configuration page (to edit/setup an issue repository)
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.Items.ISvnUriItem">
+            <summary>
+            Interface to allow Subversion Info integration
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.Items.ISvnUriItem.FullPath">
+            <summary>
+            The absolute path to the item on disk or <c>null</c> if the item has no local representation
+            </summary>
+            <remarks>Can be <c>null</c> if <see cref="P:Ankh.ExtensionPoints.Items.ISvnUriItem.Uri"/> is not null</remarks>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.Items.ISvnUriItem.Uri">
+            <summary>
+            The uri to the item in the repository
+            </summary>
+            <remarks>Can be <c>null</c> if <see cref="P:Ankh.ExtensionPoints.Items.ISvnUriItem.FullPath"/> is a valid path</remarks>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.Items.ISvnUriItem.RepositoryRoot">
+            <summary>
+            The repository root of <see cref="P:Ankh.ExtensionPoints.Items.ISvnUriItem.Uri"/> or <c>null</c>
+            </summary>
+            <remarks>It's better to provide <c>null</c> than a potentially invalid value</remarks>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositoryProvider">
+            <summary>
+            Base class for SCM Repository Provider service
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositoryProvider.CreateSelectionControl">
+            <summary>
+            Creates a SCM repository selection control which provides the UI to select  a repository
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositoryProvider.Id">
+            <summary>
+            Gets the identifier of this provider
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositoryProvider.Name">
+            <summary>
+            Gets the user-friendly name of this provider.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositoryProvider.Type">
+            <summary>
+            Gets or sets the type of the repositories that this provider supplies.
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControl">
+            <summary>
+            Base class for SCM repository selection pages contributed by the repository providers.
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControl.OnScmRepositorySelectionControlEvent(Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControlEventArgs)">
+            <summary>
+            Raises ScmRepositorySelectionControlEvent when this control needs to notify containers, such as when selection changes, or when an exception is thrown.
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControl.UserNamePasswordCallback(Ankh.ExtensionPoints.RepositoryProvider.ScmUserNamePasswordEventArgs)">
+            <summary>
+            Populates the username, password information for a SCM repository
+            </summary>
+            <param name="e">Arguments</param>
+        </member>
+        <member name="E:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControl.ScmRepositorySelectionControlEvent">
+            <summary>
+            Raised when this control needs to notify containers, such as when selection changes, or when an exception is thrown.
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControl.SelectedUri">
+            <summary>
+            Gets the string representation of the selected SCM repository URI
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControl.Window">
+            <summary>
+            Gets the IWin32Window instance which provides the UI for listing and selecting a SCM repository
+            </summary>
+            <remarks>Default implementation returns this as IWin32Window.</remarks>        
+        </member>
+        <member name="T:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControlEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControlEventArgs.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="repositoryUri"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControlEventArgs.RepositoryUri">
+            <summary>
+            Gets the repository URI string
+            </summary>
+            <remarks>this property is exposed here for convenience, and it must not be return a different value from ScmRepositorySelectionControl's SelectedUri property</remarks>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControlEventArgs.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmRepositorySelectionControlEventArgs.Exception">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.RepositoryProvider.ScmUserNamePasswordEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.RepositoryProvider.ScmUserNamePasswordEventArgs.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="repositoryUri"></param>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmUserNamePasswordEventArgs.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmUserNamePasswordEventArgs.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.RepositoryProvider.ScmUserNamePasswordEventArgs.RepositoryUri">
+            <summary>
+            Gets the repository URI string
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.RepositoryProvider.RepositoryType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Ankh.ExtensionPoints.RepositoryProvider.RepositoryType.Any">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Ankh.ExtensionPoints.RepositoryProvider.RepositoryType.Subversion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Ankh.ExtensionPoints.RepositoryProvider.RepositoryType.Git">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.UI.ApplyThemeEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.UI.ApplyThemeEventArgs.#ctor(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.UI.ApplyThemeEventArgs.ServiceProvider">
+            <summary>
+            Gets a reference to a service provider that allows querying Visual Studio services
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.UI.ApplyThemeEventArgs.NoRecurse">
+            <summary>
+            If set to true, the theming handling won't recurse into child controls
+            </summary>
+        </member>
+        <member name="P:Ankh.ExtensionPoints.UI.ApplyThemeEventArgs.DontTheme">
+            <summary>
+            If set to true the control itself is not 'auto-themed'
+            </summary>
+        </member>
+        <member name="T:Ankh.ExtensionPoints.UI.IThemedControl">
+            <summary>
+            Can be implemented to customize AnkhSVN's auto theming
+            </summary>
+        </member>
+        <member name="M:Ankh.ExtensionPoints.UI.IThemedControl.OnApplyTheme(Ankh.ExtensionPoints.UI.ApplyThemeEventArgs)">
+            <summary>
+            Called right before theming a control
+            </summary>
+            <param name="e"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.VisualStudio.Package.LanguageService.12.0</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.VisualStudio.Package.CompoundActionBase">
+      <summary>Used to create CompoundAction objects.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.CompoundActionBase.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.Package.CompoundActionBase" /> class.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.CompoundActionBase.Abort">
+      <summary>Terminates the current compound action, throwing away all edits.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.CompoundActionBase.action">
+      <summary>Interface for a CompoundAction action.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.CompoundActionBase.Close">
+      <summary>Close the compound action and commits all edits to the source file.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.CompoundActionBase.Dispose">
+      <summary>Deallocates any resources just before the <see cref="T:Microsoft.VisualStudio.Package.CompoundAction" /> object is destroyed.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.CompoundActionBase.FlushEditActions">
+      <summary>Flushes any pending edit actions from the current compound action.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.CompoundActionBase.opened">
+      <summary>Specifies if a compound action has been opened.</summary>
+    </member>
+    <member name="T:Microsoft.VisualStudio.Package.Declarations">
+      <summary>Manages a list of declarations to be shown in an IntelliSense drop-down list.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.Package.Declarations" /> class.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.Dispose">
+      <summary>Frees any resources allocated by the class just before the class object is destroyed.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetBestMatch(System.String,System.Int32@,System.Boolean@)">
+      <summary>Determines the best completion match for the specified value.</summary>
+      <param name="value">[in] The text to match against. This typically represents the text typed by the user.</param>
+      <param name="index">[out] Returns the index of the item that best matches the value.</param>
+      <param name="uniqueMatch">[out] Returns true if the best match is the only match and it matches the value exactly; otherwise, returns false.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetCount">
+      <summary>When implemented in a derived class, gets the number of items in the list of declarations.</summary>
+      <returns>The count of items represented by this <see cref="T:Microsoft.VisualStudio.Package.Declarations" /> class.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetDescription(System.Int32)">
+      <summary>When implemented in a derived class, gets a description of the specified item.</summary>
+      <returns>If successful, returns the description; otherwise, returns null.</returns>
+      <param name="index">[in] The index of the item for which to get the description.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetDisplayText(System.Int32)">
+      <summary>When implemented in a derived class, gets the text to be displayed in the completion list for the specified item.</summary>
+      <returns>The text to be displayed, otherwise null.</returns>
+      <param name="index">[in] The index of the item for which to get the display text.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetGlyph(System.Int32)">
+      <summary>When implemented in a derived class, gets the image to show next to the specified item.</summary>
+      <returns>The index of the image from an image list, otherwise -1.</returns>
+      <param name="index">[in] The index of the item for which to get the image index.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetInitialExtent(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Returns the initial extent of the text to be completed.</summary>
+      <returns>If the initial extent was determined, returns true; otherwise, returns false.</returns>
+      <param name="textView">[in] An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view that displays the source file.</param>
+      <param name="line">[out] The line number the caret is currently on.</param>
+      <param name="startIdx">[out] The character offset on the line to the first character of the text that is to trigger the commit.</param>
+      <param name="endIdx">[out] The character offset to the last character of the text that is to trigger the commit.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.GetName(System.Int32)">
+      <summary>When implemented in a derived class, gets the name or text to be inserted for the specified item.</summary>
+      <returns>If successful, returns the name of the item; otherwise, returns null.</returns>
+      <param name="index">[in] The index of the item for which to get the name.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.IsCommitChar(System.String,System.Int32,System.Char)">
+      <summary>Determines whether the specified character can be used to complete the specified text.</summary>
+      <returns>If the character is a commit character, returns true; otherwise, returns false.</returns>
+      <param name="textSoFar">[in] A string containing the text typed by the user.</param>
+      <param name="selected">[in] The number of characters that are currently selected or -1 if nothing is selected.</param>
+      <param name="commitCharacter">[in] The character to determine is a completion character.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.IsMatch(System.String,System.Int32)">
+      <summary>Determines whether the specified text matches some or all of the specified item.</summary>
+      <returns>Returns true if the specified text is at the beginning of the specified item; otherwise, returns false.</returns>
+      <param name="textSoFar">[in] A string containing the text typed by the user and to be matched.</param>
+      <param name="index">[in] The index of the item to compare against.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.IsPerfectMatch(System.String,System.Int32)">
+      <summary>Determines whether the specified text matches all of the specified item.</summary>
+      <returns>Returns true if the specified text is at the beginning of the specified item; otherwise, returns false.</returns>
+      <param name="textSoFar">[in] A string containing the text typed by the user and to be matched.</param>
+      <param name="index">[in] The index of the item to compare against.</param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Declarations.LastBestMatch">
+      <summary>Gets or sets the name of the item that best matches what has been typed so far.</summary>
+      <returns>If a best match has been set, returns a string containing the name of the item; otherwise, returns an empty string.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.OnAutoComplete(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.String,System.Char,System.Int32)">
+      <summary>Called after the declaration has been committed to the source file. When implemented in a derived class, it provides a completion character which may itself be a trigger for another round of IntelliSense.</summary>
+      <returns>Returns a character to be inserted after the committed text. If nothing is to be inserted, returns 0.</returns>
+      <param name="textView">[in] An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view that displays the source file.</param>
+      <param name="committedText">[in] A string containing the text that was inserted as part of the completion process.</param>
+      <param name="commitCharacter">[in] The character that was used to commit the text to the source file.</param>
+      <param name="index">[in] The index of the item that was committed to the source file.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Declarations.OnCommit(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.String,System.Char,System.Int32,Microsoft.VisualStudio.TextManager.Interop.TextSpan@)">
+      <summary>Called to commit the specified item to the source file.</summary>
+      <returns>If successful, returns a string containing the text to commit to the source file; otherwise, returns null.</returns>
+      <param name="textView">[in] An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view that displays the source file.</param>
+      <param name="textSoFar">[in] A string containing the text that has been typed by the user.</param>
+      <param name="commitCharacter">[in] The character used to commit the text.</param>
+      <param name="index">[in] The index of the item to commit to the source file.</param>
+      <param name="initialExtent">[in, out] A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object specifying the text typed so far. Returns the span of the committed text.</param>
+    </member>
+    <member name="T:Microsoft.VisualStudio.Package.EditorFactory">
+      <summary>This class provides a default editor factory implementation that hosts the Visual Studio core editor.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.#ctor">
+      <summary>Initializes a new instance of <see cref="T:Microsoft.VisualStudio.Package.EditorFactory" />.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.#ctor(Microsoft.VisualStudio.Shell.Package)">
+      <summary>Creates an instance of the <see cref="T:Microsoft.VisualStudio.Package.EditorFactory" /> class.</summary>
+      <param name="package">The package object.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.Close">
+      <summary>Releases all service provides and sets the package object to null.</summary>
+      <returns>If the method succeeds, it returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />. If it fails, it returns an error code.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.EditorFactory.CodePagePrompt">
+      <summary>Gets and sets flags to prompt user for an encoding on an open with specified codepage.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.__PROMPTONLOADFLAGS" /> enumeration value.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.CreateEditorInstance(System.UInt32,System.String,System.String,Microsoft.VisualStudio.Shell.Interop.IVsHierarchy,System.UInt32,System.IntPtr,System.IntPtr@,System.IntPtr@,System.String@,System.Guid@,System.Int32@)">
+      <summary>Used to create the Visual Studio core editor, an editor that supports data/view separation.</summary>
+      <returns>If the method succeeds, it returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />. If it fails, it returns an error code.</returns>
+      <param name="createDocFlags">Flags that define the conditions under which to create the core editor.</param>
+      <param name="moniker">String form of the moniker identifier of the document in the project system. In the case of documents that are files, this is always the path to the file. This parameter can also be used to specify documents that are not files. For example, in a database-oriented project, this parameter could contain a string that refers to records in a table.</param>
+      <param name="physicalView">Name of the physical view.</param>
+      <param name="pHier">An <see cref="T:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy" /> object.</param>
+      <param name="itemid">Item identifier of the core editor instance.</param>
+      <param name="existingDocData">Must be the <paramref name="docData" /> object that is registered in the Running Document Table (RDT). This parameter is used to determine if a document buffer (Document Data object) has already been created. When an editor factory is asked to create a secondary view, then this parameter will be non-NULL indicating that there is no document buffer.</param>
+      <param name="docView">Document View object. Returns NULL if an external editor exists, otherwise returns the view of the document.</param>
+      <param name="docData">Document Data object. Returns the buffer for the document.</param>
+      <param name="editorCaption">Initial caption defined by the document editor for the document window. This is typically a string enclosed in square brackets, such as "[Form]". This value is passed as an input parameter to the <see cref="M:Microsoft.VisualStudio.Shell.Interop.IVsUIShell.CreateDocumentWindow(System.UInt32,System.String,Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy,System.UInt32,System.IntPtr,System.IntPtr,System.Guid@,System.String,System.Guid@,Microsoft.VisualStudio.OLE.Interop.IServiceProvider,System.String,System.String,System.Int32[],Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame@)" /> method. If the file is [ReadOnly] the caption will be set during load of the file.</param>
+      <param name="cmdUI">Returns the Command UI GUID. This GUID is active when this editor is activated. Any UI element that is visible in the editor has to use this GUID. This GUID is used in the .ctc file in the satellite DLL where it indicates which menus and toolbars should be displayed when the document is active.</param>
+      <param name="cancelled">Enumeration of type <see cref="T:Microsoft.VisualStudio.Shell.Interop.__VSEDITORCREATEDOCWIN" />. These flags are passed to <see cref="M:Microsoft.VisualStudio.Shell.Interop.IVsUIShell.CreateDocumentWindow(System.UInt32,System.String,Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy,System.UInt32,System.IntPtr,System.IntPtr,System.Guid@,System.String,System.Guid@,Microsoft.VisualStudio.OLE.Interop.IServiceProvider,System.String,System.String,System.Int32[],Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame@)" /> Method. This value is set to 0 in the <see cref="T:Microsoft.VisualStudio.Package.EditorFactory" /> implementation.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.CreateEditorView(System.String,Microsoft.VisualStudio.TextManager.Interop.IVsTextLines,System.String,System.String@,System.Guid@)">
+      <summary>Creates a code window with the Visual Studio core editor.</summary>
+      <returns>If the method succeeds, it returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />. If it fails, it returns an error code.</returns>
+      <param name="moniker">String form of the moniker identifier of the document in the project system. In the case of documents that are files, this is always the path to the file.</param>
+      <param name="buffer">The buffer used to set the text buffer for all views in the code window.</param>
+      <param name="physicalView">Name of the physical view.</param>
+      <param name="editorCaption">Initial caption defined by the document editor for the document window. This is typically a string enclosed in square brackets, such as "[Form]". This value is passed as an input parameter to the <see cref="M:Microsoft.VisualStudio.Shell.Interop.IVsUIShell.CreateDocumentWindow(System.UInt32,System.String,Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy,System.UInt32,System.IntPtr,System.IntPtr,System.Guid@,System.String,System.Guid@,Microsoft.VisualStudio.OLE.Interop.IServiceProvider,System.String,System.String,System.Int32[],Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame@)" /> method. If the file is [ReadOnly] the caption will be set during load of the file.</param>
+      <param name="cmdUI">
+        <see cref="F:Microsoft.VisualStudio.VSConstants.GUID_TextEditorFactory" />
+      </param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.Finalize">
+      <summary>Destructor for the class.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetExtensions">
+      <summary>Returns a list of file extensions registered for this editor factory.</summary>
+      <returns>An array of strings containing the editor extensions.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetLanguageService(System.String)">
+      <summary>Gets the GUID of the language service registered for this file extension under the registry key HKLM\Software\Microsoft\Visual Studio\10.0\Languages\File Extensions.</summary>
+      <returns>The GUID of the language service.</returns>
+      <param name="fileExtension">The file extension for the desired language service.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetLanguageServiceGuid">
+      <summary>gETs the language service GUID.</summary>
+      <returns>This method returns the language service GUID. The base method returns an empty GUID.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetPackage">
+      <summary>Gets the <see cref="T:Microsoft.VisualStudio.Shell.Package" /> object.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.Shell.Package" /> object.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetRegisteredEditor(System.String)">
+      <summary>Gets the GUID of the highest-priority editor registered for this extension. This will also pick up user-defined associations between file extensions and editors </summary>
+      <returns>The GUID of the editor.</returns>
+      <param name="extension">The extension for which to get the editor.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetRegisteredEditorInfo(System.String)">
+      <summary>Gets the <see cref="T:Microsoft.VisualStudio.Package.EditorFactory.EditorInfo" /> for the specified extension.</summary>
+      <returns>The <see cref="T:Microsoft.VisualStudio.Package.EditorFactory.EditorInfo" /> registered for the given extension.</returns>
+      <param name="extension">The extension for which to get the editor information</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetSite">
+      <summary>Gets the main service provider.</summary>
+      <returns>
+        <see cref="T:Microsoft.VisualStudio.OLE.Interop.IServiceProvider" />.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.GetUserDefinedEditor(System.String)">
+      <summary>Gets the GUID of the editor that the user has defined for this file extension. </summary>
+      <returns>The GUID of the editor, or an empty GUID if none is found</returns>
+      <param name="extension">The extension for which to get the editor.</param>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.EditorFactory.GuidVSBufferDetectLangSid">
+      <summary>Gets a GUID value in <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsUserData" /> that, when set to false, will stop the core editor for searching for a different language service.</summary>
+      <returns>The GUID corresponding to the value that, when set to false, will stop the core editor for searching for a different language service.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.IsOurFileFormat(System.String)">
+      <summary>Checks whether there is an editor that can handle this extension.</summary>
+      <returns>By default returns true. Implementations should override this method to handle their own file formats.</returns>
+      <param name="moniker">The extension for which an editor is desired.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.IsRegisteredExtension(System.String)">
+      <summary>Determines if a file extension is registered with this editor factory.</summary>
+      <returns>Returns true if the file extension is registered with this editor factory, false otherwise.</returns>
+      <param name="extension">A string containing the file extension.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.MapLogicalView(System.Guid@,System.String@)">
+      <summary>Maps a logical view to a physical view.</summary>
+      <returns>If the method succeeds, it returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />. If it fails, it returns an error code.</returns>
+      <param name="logicalView">Unique identifier of the logical view.</param>
+      <param name="physicalView">The name of the physical view to which the logical view is to be mapped.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.EditorFactory.SetSite(Microsoft.VisualStudio.OLE.Interop.IServiceProvider)">
+      <summary>Sets the service provider.</summary>
+      <returns>If the method succeeds, it returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />. If it fails, it returns an error code.</returns>
+      <param name="psp">The <see cref="T:Microsoft.VisualStudio.OLE.Interop.IServiceProvider" /> object of the editor being initialized.</param>
+    </member>
+    <member name="T:Microsoft.VisualStudio.Package.MethodData">
+      <summary>Provides support for the IntelliSense method tip operation.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.#ctor(System.IServiceProvider)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> class.</summary>
+      <param name="site">[in] An <see cref="T:Microsoft.VisualStudio.OLE.Interop.IServiceProvider" /> object that is to be used as the service provider.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.AdjustCurrentParameter(System.Int32)">
+      <summary>Update the current parameter, either forward or backward, by the specified amount.</summary>
+      <param name="increment">[in] A value to add to the current parameter index. This is negative if the parameter index is to be decremented.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.Close">
+      <summary>Closes the method tip and clears the <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.Dismiss">
+      <summary>Dismisses the method tip from view.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.Dispose">
+      <summary>Frees any allocations made just before the <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> object is destroyed.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetContextStream(System.Int32@,System.Int32@)">
+      <summary>Converts the current context span to a file position and length.</summary>
+      <returns>If successful, returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />; otherwise, returns an error code.</returns>
+      <param name="pos">[out] Returns the position in the source file that corresponds to the start of the context span.</param>
+      <param name="length">[out] Returns the length of the span.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetCurMethod">
+      <summary>Returns the currently visible method signature.</summary>
+      <returns>Returns a number representing the currently visible method signature in the <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetCurrentParameter(System.Int32)">
+      <summary>Returns the current parameter being edited in the specified method signature.</summary>
+      <returns>Returns the current index into the parameter list for the specified method signature.</returns>
+      <param name="method">[in] An index in the <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object to the specified method signature.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetMethodText(System.Int32,Microsoft.VisualStudio.TextManager.Interop.MethodTextType)">
+      <summary>Returns the specified text for the specified method signature.</summary>
+      <returns>If successful, returns a marshaled pointer to the requested string; otherwise, returns a null value.</returns>
+      <param name="method">[in] An index in the <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object to the specified method signature.</param>
+      <param name="type">[in] A value from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.MethodTextType" /> enumeration specifying what type of text to return.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetOverloadCount">
+      <summary>Returns the number of method signatures that can be shown.</summary>
+      <returns>If there is at least one method signature, returns the number of method signatures available; otherwise, returns 0.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetParameterCount(System.Int32)">
+      <summary>Returns the number of parameters available for the specified method signature.</summary>
+      <returns>If successful, returns the number of parameters; otherwise, returns 0.</returns>
+      <param name="method">[in] An index in the <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object to the specified method signature.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.GetParameterText(System.Int32,System.Int32,Microsoft.VisualStudio.TextManager.Interop.ParameterTextType)">
+      <summary>Returns the specified parameter text for the specified method signature.</summary>
+      <returns>If successful, returns a marshaled pointer to the requested string; otherwise, returns a null value.</returns>
+      <param name="method">[in] An index in the <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object to the specified method signature.</param>
+      <param name="parameter">[in] An index to the specified parameter.</param>
+      <param name="type">[in] A value from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.ParameterTextType" /> enumeration specifying what type of text to return.</param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.MethodData.IsDisplayed">
+      <summary>Determines if the method tip is visible.</summary>
+      <returns>If the method tip is displayed, returns true; otherwise, returns false.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.MethodData.Methods">
+      <summary>Determines the list of method signatures that can be displayed in the method tip.</summary>
+      <returns>Returns the <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object that was passed to the <see cref="M:Microsoft.VisualStudio.Package.MethodData.Refresh(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,Microsoft.VisualStudio.Package.Methods,System.Int32,Microsoft.VisualStudio.TextManager.Interop.TextSpan)" /> method.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.MethodData.MethodTipWindow">
+      <summary>Determines the method tip window as represented by an <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsMethodTipWindow" /> interface.</summary>
+      <returns>Returns the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsMethodTipWindow" /> object that was created in the <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> class constructor.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.NextMethod">
+      <summary>Moves to the next method signature and returns the index of the current method signature.</summary>
+      <returns>Returns a number representing the current method signature.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.OnDismiss">
+      <summary>Called after the method tip is removed from view.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.PrevMethod">
+      <summary>Moves to the previous method signature and returns the index of the current method signature.</summary>
+      <returns>Returns a number representing the current method signature.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.MethodData.Provider">
+      <summary>Determines the service provider.</summary>
+      <returns>Returns the <see cref="T:Microsoft.VisualStudio.OLE.Interop.IServiceProvider" /> object that was passed to the <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> class constructor.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.Refresh(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,Microsoft.VisualStudio.Package.Methods,System.Int32,Microsoft.VisualStudio.TextManager.Interop.TextSpan)">
+      <summary>Displays the method tip with the given method signatures.</summary>
+      <param name="textView">[in] An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view that displays the method tip.</param>
+      <param name="methods">[in] A <see cref="T:Microsoft.VisualStudio.Package.Methods" /> object representing the method signatures to be displayed.</param>
+      <param name="currentParameter">[in] The parameter to be highlighted initially. Set this to -1 to start before the first parameter. This value is typically determined by parsing what the user has typed so far since the start of the parameter list.</param>
+      <param name="context">[in] A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object specifying the initial span containing the method name that has already been typed.</param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.MethodData.TextView">
+      <summary>Determines the view the method tip is displayed on.</summary>
+      <returns>Returns the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object that was passed to the <see cref="M:Microsoft.VisualStudio.Package.MethodData.Refresh(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,Microsoft.VisualStudio.Package.Methods,System.Int32,Microsoft.VisualStudio.TextManager.Interop.TextSpan)" /> method.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.MethodData.UpdateView">
+      <summary>Updates the method tip display.</summary>
+    </member>
+    <member name="T:Microsoft.VisualStudio.Package.Source">
+      <summary>Represents a source file in the language service and controls parsing operations on that source.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.#ctor(Microsoft.VisualStudio.Package.LanguageService,Microsoft.VisualStudio.TextManager.Interop.IVsTextLines,Microsoft.VisualStudio.Package.Colorizer)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualStudio.Package.Source" /> class.</summary>
+      <param name="service">The <see cref="T:Microsoft.VisualStudio.Package.LanguageService" /> object representing the language service that controls this instance. This is required and cannot be null.</param>
+      <param name="textLines">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines" /> object representing the source file. This is required and cannot be null.</param>
+      <param name="colorizer">The <see cref="T:Microsoft.VisualStudio.Package.Colorizer" /> object to use for syntax highlighting. This is required and cannot be null.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.BeginParse">
+      <summary>Begins a full parsing operation either in the foreground or the background.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.BeginParse(System.Int32,System.Int32,Microsoft.VisualStudio.Package.TokenInfo,Microsoft.VisualStudio.Package.ParseReason,Microsoft.VisualStudio.TextManager.Interop.IVsTextView,Microsoft.VisualStudio.Package.ParseResultHandler)">
+      <summary>Begins a parsing operation with the given token, text view, and parse request handler.</summary>
+      <param name="line">The line number.</param>
+      <param name="idx">The line column.</param>
+      <param name="info">The <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> that is used to create the <see cref="T:Microsoft.VisualStudio.Package.ParseRequest" />. </param>
+      <param name="reason">The <see cref="T:Microsoft.VisualStudio.Package.ParseReason" /> that is used to create the <see cref="T:Microsoft.VisualStudio.Package.ParseRequest" />.</param>
+      <param name="view">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> that is used to create the <see cref="T:Microsoft.VisualStudio.Package.ParseRequest" />.</param>
+      <param name="callback">A special handler that can be called to deal with certain kinds of parsing, such as <see cref="M:Microsoft.VisualStudio.Package.Source.HandleMatchBracesResponse(ParseRequest)" /> or <see cref="M:Microsoft.VisualStudio.Package.Source.HandleCompletionResponse(ParseRequest)" />. </param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.ChangeCount">
+      <summary>Gets the number of changes made to the source file since it was opened.</summary>
+      <returns>The number of times the source file was changed.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.Close">
+      <summary>Determines whether the source file can be closed.</summary>
+      <returns>true if the source file can be closed; otherwise, returns false.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.ColorState">
+      <summary>Gets or sets the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextColorState" /> object that is used in various parsing tasks.</summary>
+      <returns>The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextColorState" /> interface that is obtained from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines" /> object passed to the constructor.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.ColumnToVisiblePosition(System.Int32,System.Int32)">
+      <summary>Gets the screen column position corresponding to the specified character offset, taking into account tab size.</summary>
+      <returns>The screen column position that corresponds to the specified <paramref name="col" /> parameter.</returns>
+      <param name="line">The line of source to look at.</param>
+      <param name="col">The offset into the line of source.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CommentBlock(Microsoft.VisualStudio.TextManager.Interop.TextSpan,System.String,System.String)">
+      <summary>Comments out a span of source using block comments.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object encompassing the entire commented block, including the added comment start and end strings.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span of source to put into a block comment.</param>
+      <param name="blockStart">A string that specifies the block comment start character or characters.</param>
+      <param name="blockEnd">A string that specifies the block comment end character or characters.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CommentLines(Microsoft.VisualStudio.TextManager.Interop.TextSpan,System.String)">
+      <summary>Comments out a span of source using line comments.</summary>
+      <returns>Returns a <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object encompassing the entire commented block, including the added line comment start string.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span to put into line comments.</param>
+      <param name="lineComment">The string that specifies the line comment character or characters.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CommentSpan(Microsoft.VisualStudio.TextManager.Interop.TextSpan)">
+      <summary>Comments out the specified span of source.</summary>
+      <returns>A new <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object encompassing the entire commented out span, including any comment start and end strings.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span of source to comment out.</param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.CompletedFirstParse">
+      <summary>Gets whether the parser has completed at least once.</summary>
+      <returns>true if the parser has completed at least once, otherwise false.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.Completion(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,Microsoft.VisualStudio.Package.TokenInfo,Microsoft.VisualStudio.Package.ParseReason)">
+      <summary>Starts an IntelliSense member completion operation.</summary>
+      <param name="textView">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view the completion list is shown in.</param>
+      <param name="info">The <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object representing the token that triggered the completion operation.</param>
+      <param name="reason">A value from the <see cref="T:Microsoft.VisualStudio.Package.ParseReason" /> enumeration specifying how this completion operation was triggered.</param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.CompletionSet">
+      <summary>Gets the <see cref="T:Microsoft.VisualStudio.Package.CompletionSet" /> collection used for this instance of the <see cref="T:Microsoft.VisualStudio.Package.Source" /> class.</summary>
+      <returns>The <see cref="T:Microsoft.VisualStudio.Package.CompletionSet" /> object created in the constructor.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CreateAuthoringSink(Microsoft.VisualStudio.Package.ParseReason,System.Int32,System.Int32)">
+      <summary>Creates an instance of an <see cref="T:Microsoft.VisualStudio.Package.AuthoringSink" /> object for use in parsing operations.</summary>
+      <returns>Returns an <see cref="T:Microsoft.VisualStudio.Package.AuthoringSink" /> object.</returns>
+      <param name="reason">A value from the ParseReason enumeration describing the reason for the parse operation.</param>
+      <param name="line">The line index where the parsing is to start.</param>
+      <param name="col">The column index where the parsing is to start.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CreateCompletionSet">
+      <summary>Creates a new instance of a <see cref="T:Microsoft.VisualStudio.Package.CompletionSet" /> class.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.Package.CompletionSet" /> object.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CreateErrorTaskItem(Microsoft.VisualStudio.TextManager.Interop.TextSpan,Microsoft.VisualStudio.TextManager.Interop.MARKERTYPE,System.String)">
+      <summary>Creates a new error task item for the Error List, for the supplied text, marker type, and file name.</summary>
+      <returns>A new instance of <see cref="T:Microsoft.VisualStudio.Package.DocumentTask" />.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> structure, which defines a block of text.</param>
+      <param name="markerType">A member of the <see cref="T:Microsoft.VisualStudio.TextManager.MARKERTYPE" /> enumeration.</param>
+      <param name="filename">The name of the file.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CreateErrorTaskItem(Microsoft.VisualStudio.TextManager.Interop.TextSpan,System.String,System.String,Microsoft.VisualStudio.Shell.TaskPriority,Microsoft.VisualStudio.Shell.TaskCategory,Microsoft.VisualStudio.TextManager.Interop.MARKERTYPE,Microsoft.VisualStudio.Shell.TaskErrorCategory)">
+      <summary>Creates a new error task item for the Error List, for the supplied text, file name, message, priority, category, marker type, and error type.</summary>
+      <returns>A new instance of <see cref="T:Microsoft.VisualStudio.Package.DocumentTask" />.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> structure, which defines a block of text.</param>
+      <param name="filename">The name of the file.</param>
+      <param name="message">The error message.</param>
+      <param name="priority">A member of the <see cref="T:Microsoft.VisualStudio.Shell.TaskPriority" /> enumeration.</param>
+      <param name="category">A member of the <see cref="T:Microsoft.VisualStudio.Shell.TaskCategory" /> enumeration.</param>
+      <param name="markerType">A member of the <see cref="T:Microsoft.VisualStudio.TextManager.MARKERTYPE" /> enumeration.</param>
+      <param name="errorCategory">A member of the <see cref="T:Microsoft.VisualStudio.Shell.ErrorCategory" /> enumeration, which defines the level of error.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.CreateMethodData">
+      <summary>Creates a new instance of a <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> object that handles the IntelliSense method tip mode.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.Package.MethodData" /> object.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.DirtySpan">
+      <summary>Gets a range that identifies the changed lines in the source.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object containing the range of lines that have been changed in the source file.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.DismissCompletor">
+      <summary>Removes the IntelliSense method tip or completion list from view, whichever was active.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.Dispose">
+      <summary>Called in preparation of destroying this <see cref="T:Microsoft.VisualStudio.Package.Source" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.ExecMarkerCommand(Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion,System.Int32)">
+      <summary>Executes the specified command on the specified region.</summary>
+      <returns>If successful, returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />; otherwise, returns an error code. If support for commands on a hidden region is not needed, returns <see cref="F:Microsoft.VisualStudio.VSConstants.E_NOTIMPL" />.</returns>
+      <param name="region">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion" /> object representing the hidden region to apply the command to.</param>
+      <param name="cmd">A value from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.MarkerCommandValues" /> enumeration specifying the command to execute.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.Finalize">
+      <summary>The class destructor, called just before the object is destroyed.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetColorizer">
+      <summary>Gets the colorizer associated with this <see cref="T:Microsoft.VisualStudio.Package.Source" /> object.</summary>
+      <returns>The <see cref="T:Microsoft.VisualStudio.Package.Colorizer" /> object that was passed to the <see cref="T:Microsoft.VisualStudio.Package.Source" /> class constructor.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetCommentFormat">
+      <summary>Gets information on what defines a comment in the language.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.Package.CommentInfo" /> structure containing the strings that define a comment.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetDocumentSpan">
+      <summary>Gets the span occupied by the entire source file.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object that encompasses the entire source file.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetExpansionProvider">
+      <summary>Gets an expansion provider in support of code snippets.</summary>
+      <returns>If successful, returns an <see cref="T:Microsoft.VisualStudio.Package.ExpansionProvider" /> object; otherwise, returns null (code snippet expansion is not supported).</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetFilePath">
+      <summary>Gets the file name of the source file.</summary>
+      <returns>The file name of the source file.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetHiddenTextSession">
+      <summary>Gets the hidden region manager if available.</summary>
+      <returns>If successful, returns an <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenTextSession" /> object representing the hidden region manager; otherwise returns null.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetLine(System.Int32)">
+      <summary>Gets the text on the specified line.</summary>
+      <returns>The text at the specified line number. This could be an empty string.</returns>
+      <param name="line">The line number for which to get the text.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetLineCount">
+      <summary>Gets the number of lines in the source file.</summary>
+      <returns>A number representing the number of lines in the source file. This value can be 0.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetLineIndexOfPosition(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Gets the line and column for the specified position.</summary>
+      <param name="position">The position or character offset into the source file.</param>
+      <param name="line">[out] Returns the line number corresponding to the position.</param>
+      <param name="col">[out] Returns the column number (offset on the line) corresponding to the position.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetLineLength(System.Int32)">
+      <summary>Gets the length of the specified line.</summary>
+      <returns>A number representing the number of characters on the line.</returns>
+      <param name="line">The line number for which to get the length.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetMarkerCommandInfo(Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion,System.Int32,System.String[],System.UInt32[])">
+      <summary>Determines which marker commands can be shown on a context menu for the specified hidden region.</summary>
+      <returns>If successful, returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />; otherwise, returns an error code. If support for commands on a hidden region is not needed, return <see cref="F:Microsoft.VisualStudio.VSConstants.E_NOTIMPL" />.</returns>
+      <param name="region">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion" /> object describing the hidden region.</param>
+      <param name="item">A value from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.MarkerCommandValues" /> enumeration specifying the command to examine.</param>
+      <param name="outText">[out] Returns the string to show on the context menu if the specified command is supported.</param>
+      <param name="flags">[out] Returns a set of flags from the <see cref="T:Microsoft.VisualStudio.OLE.Interop.OLECMDF" /> enumeration indicating whether the command is supported.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetNewLine(System.Int32)">
+      <summary>Gets the newline character used at the end of the specified line.</summary>
+      <returns>The newline character from the end of the line.</returns>
+      <param name="line"> The line number from which to get the new line character.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetPairExtents(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.Int32,System.Int32,Microsoft.VisualStudio.TextManager.Interop.TextSpan@)">
+      <summary>Gets the span between a matching pair of language elements.</summary>
+      <param name="textView">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> that contains the text that contains the matching language elements.</param>
+      <param name="line">The line number.</param>
+      <param name="col">The column number.</param>
+      <param name="span">[out] A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> that contains the matching language elements.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetPairExtents(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.Int32,System.Int32,Microsoft.VisualStudio.TextManager.Interop.TextSpan@,Microsoft.VisualStudio.TextManager.Interop.TextSpan@)">
+      <summary>Gets the text spans for a matching pair (or triplet) of language elements.</summary>
+      <returns>true if the pair was found, otherwise false.</returns>
+      <param name="textView">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> that contains the text that contains the matching language elements.</param>
+      <param name="line">The line number.</param>
+      <param name="col">The column number.</param>
+      <param name="startBraceSpan">[out] The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextSpan" /> that contains the starting element.</param>
+      <param name="endBraceSpan">[out] The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextSpan" /> that contains the end element.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetPositionOfLineIndex(System.Int32,System.Int32)">
+      <summary>Gets the position corresponding to the given line and character offset location.</summary>
+      <returns>The position or character offset from the start of the source file.</returns>
+      <param name="line">The line number of the location.</param>
+      <param name="col">The offset on the line of the location.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetTaskProvider">
+      <summary>Gets the task provider that manages the error tasks.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.Shell.TaskProvider" /> object.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetText">
+      <summary>Gets all of the text of the source file.</summary>
+      <returns>The entire source file.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetText(Microsoft.VisualStudio.TextManager.Interop.TextSpan)">
+      <summary>Gets the text included in the text span.</summary>
+      <returns>The text included in the text span.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> structure, which defines a block of text. </param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetText(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Gets the text between the specified locations.</summary>
+      <returns>The desired text. This can be an empty string.</returns>
+      <param name="startLine">The first line of text to obtain.</param>
+      <param name="startCol">The offset on the first line to the first character to obtain.</param>
+      <param name="endLine">The last line of text to obtain.</param>
+      <param name="endCol">The offset on the last line to the last character to obtain.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetTextLines">
+      <summary>Gets the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines" /> object associated with this <see cref="T:Microsoft.VisualStudio.Package.Source" /> object.</summary>
+      <returns>The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextLines" /> object passed to the <see cref="T:Microsoft.VisualStudio.Package.Source" /> class constructor.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetTextUpToLine(System.Int32)">
+      <summary>Gets the text from the source up to and including the given line number.</summary>
+      <returns>All the text up to and including the given line.</returns>
+      <param name="line">The line number of the last line of text to obtain. Specify 0 to obtain all the text in the source.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetTipText(Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion,System.String[])">
+      <summary>Gets the text in the given hidden region to be used in a tool tip.</summary>
+      <returns>If successful, returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />; otherwise, returns an error code.</returns>
+      <param name="region">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion" /> object from which to obtain the text to display.</param>
+      <param name="result">[out] Returns the text from the hidden region.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetTokenInfo(System.Int32,System.Int32)">
+      <summary>Gets information about the token at the specified position.</summary>
+      <returns>A <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object containing information about the current token.</returns>
+      <param name="line">The number of the line containing the token to examine.</param>
+      <param name="col">The character offset in the line to the token to examine.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetTokenInfoAt(Microsoft.VisualStudio.Package.TokenInfo[],System.Int32,Microsoft.VisualStudio.Package.TokenInfo@)">
+      <summary>Gets the index of the <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object that includes the supplied column number.</summary>
+      <returns>The index of the <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object which includes the specified column number, or -1 if it is not found.</returns>
+      <param name="infoArray">The array of <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> objects to search.</param>
+      <param name="col">The column number to find.</param>
+      <param name="info">[ref] A <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetUserData(System.Guid@)">
+      <summary>Gets the user data associated with the specified GUID.</summary>
+      <returns>If successful, returns an object representing the requested data; otherwise, returns an error code.</returns>
+      <param name="key">The GUID specifying what user data to retrieve.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.GetWordExtent(System.Int32,System.Int32,Microsoft.VisualStudio.TextManager.Interop.WORDEXTFLAGS,System.Int32@,System.Int32@)">
+      <summary>Gets the span occupied by the word at the specified location.</summary>
+      <returns>true if the word was found; otherwise, false, meaning that there is no word at that position.</returns>
+      <param name="line">The line on which the word to examine is located.</param>
+      <param name="idx">The offset into the line to somewhere in the word (does not have to be at the beginning of the word).</param>
+      <param name="flags">A combination of flags from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.WORDEXTFLAGS" /> enumeration.</param>
+      <param name="startIdx">[out] Returns the offset of the first character of the word.</param>
+      <param name="endIdx">[out] Returns the offset of the character one past the last character of the word.</param>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.HandlesSnapshots"></member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.IsClosed">
+      <summary>Gets the current state of the source file.</summary>
+      <returns>true if the source file is closed; otherwise false.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.IsCompletorActive">
+      <summary>Gets whether the IntelliSense member completion or method tip modes are active.</summary>
+      <returns>rue if the completion or method tip modes are active; otherwise, returns false.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.IsDirty">
+      <summary>Gets or sets whether any of the lines of source have changed.</summary>
+      <returns>true if at least one line of source has changed; otherwise, returns false.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.LanguageService">
+      <summary>Gets the language service associated with the source file.</summary>
+      <returns>The <see cref="T:Microsoft.VisualStudio.Package.LanguageService" /> object passed to the constructor.</returns>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.LastParseTime">
+      <summary>Gets the duration of the last parse operation.</summary>
+      <returns>The duration of the last parse.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.MakeBaseSpanVisible(Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion,Microsoft.VisualStudio.TextManager.Interop.TextSpan[])">
+      <summary>Ensures that the given span in the given hidden region is visible.</summary>
+      <returns>If successful, returns <see cref="F:Microsoft.VisualStudio.VSConstants.S_OK" />; otherwise, returns an error code. If this method is not implemented, return the <see cref="F:Microsoft.VisualStudio.VSConstants.E_NOTIMPL" /> field.</returns>
+      <param name="region">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion" /> object representing the hidden region to make visible.</param>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the region to be made visible.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.MatchBraces(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.Int32,System.Int32,Microsoft.VisualStudio.Package.TokenInfo)">
+      <summary>Highlights the spans of a pair of language elements, given the position of one of the elements.</summary>
+      <param name="textView">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view on the source file.</param>
+      <param name="line">The line number of the language element for which to find a match.</param>
+      <param name="index">The offset on the line of the location.</param>
+      <param name="info">A <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object containing the information about the token (that is, the language element for which to find a match) under the given location.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.MethodTip(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,System.Int32,System.Int32,Microsoft.VisualStudio.Package.TokenInfo)">
+      <summary>Displays an IntelliSense method tip showing a method's signature as it is entered.</summary>
+      <param name="textView">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view containing the source file.</param>
+      <param name="line">The line number where the user is entering text.</param>
+      <param name="index">The offset into the line where the user is entering text.</param>
+      <param name="info">A <see cref="T:Microsoft.VisualStudio.Package.TokenInfo" /> object representing the token that triggered the method tip (typically, this is the parameter list start character, end character, or parameter separator character).</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.NormalizeNewlines(System.String,System.String)">
+      <summary>Converts the newlines in the specified text to the specified newline.</summary>
+      <returns>Returns a string containing the converted text.</returns>
+      <param name="input">The text in which to convert the newlines.</param>
+      <param name="newline">The newline to which to convert.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnBeforeSessionEnd">
+      <summary>Called just before a hidden region session is closed.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnChangeLineAttributes(System.Int32,System.Int32)">
+      <summary>Called when one or more lines' attributes (font, color) have changed.</summary>
+      <param name="firstLine">The first line that was changed.</param>
+      <param name="lastLine">The last line that was changed.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnChangeLineText(Microsoft.VisualStudio.TextManager.Interop.TextLineChange[],System.Int32)">
+      <summary>Called when a line's text has changed.</summary>
+      <param name="lineChange">The <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextLineChange" /> object that describes the line that was changed.</param>
+      <param name="last">Nonzero if the last line of the source is included in the change; otherwise, this is zero.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnCommand(Microsoft.VisualStudio.TextManager.Interop.IVsTextView,Microsoft.VisualStudio.VSConstants.VSStd2KCmdID,System.Char)">
+      <summary>Handles IntelliSense-oriented commands.</summary>
+      <param name="textView">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsTextView" /> object representing the view containing the source where the command was entered.</param>
+      <param name="command">A value from the <see cref="T:Microsoft.VisualStudio.VSConstants.VSStd2KCmdID" /> enumeration specifying the command that was entered.</param>
+      <param name="ch">The character that was typed.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnHiddenRegionChange(Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion,Microsoft.VisualStudio.TextManager.Interop.HIDDEN_REGION_EVENT,System.Int32)">
+      <summary>Called when a hidden region has changed.</summary>
+      <param name="region">An <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion" /> object representing the hidden region that has changed.</param>
+      <param name="evt">A value from the <see cref="T:Microsoft.VisualStudio.TextManager.Interop.HIDDEN_REGION_EVENT" /> enumeration describing how the region has changed.</param>
+      <param name="fBufferModifiable">Nonzero if it is safe to change the source buffer as a result of the change; otherwise, the source buffer must remain untouched.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnIdle(System.Boolean)">
+      <summary>Called when no other events are being handled.</summary>
+      <param name="periodic">true if this call is a result of a periodic timer; otherwise, this is a truly idle call.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.OnUserDataChange(System.Guid@,System.Object)">
+      <summary>Called when user data has been changed in a text buffer.</summary>
+      <param name="riidKey">The GUID representing the value that was changed.</param>
+      <param name="vtNewValue">A <see cref="T:Microsoft.VisualStudio.Package.Variant" /> containing the new value.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.Open">
+      <summary>Marks the <see cref="T:Microsoft.VisualStudio.Package.Source" /> object as being open.</summary>
+    </member>
+    <member name="P:Microsoft.VisualStudio.Package.Source.OutliningEnabled">
+      <summary>Gets or sets whether outlining is currently enabled.</summary>
+      <returns>true if outlining is enabled, otherwise false.</returns>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.ProcessHiddenRegions(System.Collections.ArrayList)">
+      <summary>Updates all hidden regions based on the given list of hidden regions.</summary>
+      <param name="hiddenRegions">An <see cref="T:System.Collections.ArrayList" /> of <see cref="T:Microsoft.VisualStudio.TextManager.Interop.IVsHiddenRegion" /> objects describing new hidden regions to add.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.Recolorize(System.Int32,System.Int32)">
+      <summary>Updates the syntax highlighting on the specified range of lines.</summary>
+      <param name="startLine">The first line to update.</param>
+      <param name="endLine">The last line to update.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.ReformatSpan(Microsoft.VisualStudio.Package.EditArray,Microsoft.VisualStudio.TextManager.Interop.TextSpan)">
+      <summary>Format the specified span of source.</summary>
+      <param name="mgr">An <see cref="T:Microsoft.VisualStudio.Package.EditArray" /> object that contains the source to be reformatted.</param>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the range of lines to be reformatted.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.RegisterTextBufferEventHandlers(Microsoft.VisualStudio.TextManager.Interop.IVsTextLines)">
+      <summary>Registers event handlers for the given text.</summary>
+      <param name="textLines">The text.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.RemoveHiddenRegions">
+      <summary>Removes all hidden regions from the current view.</summary>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.RemoveTask(Microsoft.VisualStudio.Package.DocumentTask)">
+      <summary>Removes the specified error task from the error Task window.</summary>
+      <param name="task">A <see cref="T:Microsoft.VisualStudio.Package.DocumentTask" /> object representing the error task to remove.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.ScanToNonWhitespaceChar(System.Int32)">
+      <summary>Returns the offset of the first non-whitespace character on the given line.</summary>
+      <returns>A character offset to the first non-whitespace character.</returns>
+      <param name="line">The line number to examine.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.SetText(Microsoft.VisualStudio.TextManager.Interop.TextSpan,System.String)">
+      <summary>Replaces the specified span of source with the given text.</summary>
+      <param name="span"> A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span to replace.</param>
+      <param name="newText"> A string holding the new text.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.SetText(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+      <summary>Replaces the specified section of source with the given text.</summary>
+      <param name="startLine">The first line of source to replace.</param>
+      <param name="startCol">The beginning offset of the first character on the first line to replace.</param>
+      <param name="endLine">The last line of source to replace.</param>
+      <param name="endCol">The last character offset on the last line to replace.</param>
+      <param name="newText">The new text.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.SetText(System.String)">
+      <summary>Replaces the source contents with the given text.</summary>
+      <param name="newText">The new text.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.SetUserData(System.Guid@,System.Object)">
+      <summary>Sets the given user data property to the given value.</summary>
+      <param name="key">The GUID of the user data property to set the value for.</param>
+      <param name="data">An object representing the value to set.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.TrimSpan(Microsoft.VisualStudio.TextManager.Interop.TextSpan@)">
+      <summary>Adjusts the given span to skip leading and trailing whitespace.</summary>
+      <param name="span">[in, out] A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object representing the span to modify. Returns the adjusted span.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.UncommentBlock(Microsoft.VisualStudio.TextManager.Interop.TextSpan,System.String,System.String)">
+      <summary>Removes comment characters from around the specified span.</summary>
+      <returns>A new <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span after the comment characters have been removed.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span to uncomment.</param>
+      <param name="blockStart">A string holding the characters that start a block comment.</param>
+      <param name="blockEnd">A string holding the characters that end a block comment.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.UncommentLines(Microsoft.VisualStudio.TextManager.Interop.TextSpan,System.String)">
+      <summary>Removes line comment characters from the beginning of each line in the given span.</summary>
+      <returns>A new <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span after the line comment characters have been removed.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the range of lines to examine.</param>
+      <param name="lineComment"> The characters that start a line comment.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.UncommentSpan(Microsoft.VisualStudio.TextManager.Interop.TextSpan)">
+      <summary>Removes any comment characters from the beginning and end of the given span.</summary>
+      <returns>A new <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the span after the comment characters have been removed.</returns>
+      <param name="span">A <see cref="T:Microsoft.VisualStudio.TextManager.Interop.TextSpan" /> object describing the range of lines to examine.</param>
+    </member>
+    <member name="M:Microsoft.VisualStudio.Package.Source.VisiblePositionToColumn(System.Int32,System.Int32)">
+      <summary>Gets the character offset on the given line corresponding to the specified screen column position.</summary>
+      <returns>The character offset into the line. If the visible position is off the end of the line, then return the length of the line.</returns>
+      <param name="line">The number of the line to examine.</param>
+      <param name="visiblePosition">The screen column to convert.</param>
+    </member>
+    <member name="T:Microsoft.VisualStudio.Package.TokenTriggers">
+      <summary>Specifies a set of triggers that can be fired from an <see cref="T:Microsoft.VisualStudio.Package.IScanner" /> language parser.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.MatchBraces">
+      <summary>The opening or closing part of a language pair has been parsed. For example, in C#, a { or } has been parsed. In XML, a &lt; or &gt; has been parsed.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.MemberSelect">
+      <summary>A character that indicates that the start of a member selection has been parsed. In C#, this could be a period following a class name. In XML, this could be a &lt; (the member select is a list of possible tags).</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.MethodTip">
+      <summary>This is a mask for the flags used to govern the IntelliSense Method Tip operation. This mask is used to isolate the values <see cref="F:Microsoft.VisualStudio.Package.TokenTriggers.Parameter" />, <see cref="F:Microsoft.VisualStudio.Package.TokenTriggers.ParameterStart" />, <see cref="F:Microsoft.VisualStudio.Package.TokenTriggers.ParameterNext" />, and <see cref="F:Microsoft.VisualStudio.Package.TokenTriggers.ParameterEnd" />.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.None">
+      <summary>Used when no triggers are set. This is the default.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.Parameter">
+      <summary>A parameter in a method's parameter list has been parsed.</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.ParameterEnd">
+      <summary>A character that marks the end of a parameter list has been parsed. For example, in C#, this could be a close parenthesis, ")".</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.ParameterNext">
+      <summary>A character that separates parameters in a list has been parsed. For example, in C#, this could be a comma, ",".</summary>
+    </member>
+    <member name="F:Microsoft.VisualStudio.Package.TokenTriggers.ParameterStart">
+      <summary>A character that marks the start of a parameter list has been parsed. For example, in C#, this could be an open parenthesis, "(".</summary>
+    </member>
+  </members>
+</doc>
