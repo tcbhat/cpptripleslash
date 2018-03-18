@@ -1,0 +1,13 @@
+
+**/bin/*
+**/obj/*
+*.pdb
+*.pkgdef
+CppDoxyComplete/bin/Debug/*
+CppDoxyComplete/bin/Release/*
+CppDoxyComplete/backup/*
+**/.vs/**/v15/**
+CppDoxyComplete/CppDoxyComplete_IntegrationTests/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+*TemporaryGeneratedFile*
+CppDoxyComplete/.vs/CppDoxyComplete/v15/.suo
+CppDoxyComplete/UpgradeLog.htm
