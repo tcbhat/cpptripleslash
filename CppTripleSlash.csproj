@@ -102,6 +102,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Function.cs" />
     <Compile Include="Guids.cs" />
     <Compile Include="CppTripleSlashPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
